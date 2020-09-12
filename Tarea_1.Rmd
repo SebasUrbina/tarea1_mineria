@@ -10,7 +10,7 @@ output:
   pdf_document:
     toc: yes
 ---
-
+#test
 # Declaración de compromiso ético
 Nosotros **AGREGUEN SUS NOMBRES**, declaramos que realizamos de manera grupal los pasos de la presente actividad. También declaramos no incurrir en copia, ni compartir nuestras respuestas con otras personas ni con otros grupos. Por lo que, ratificamos que las respuestas son de nuestra propia confección y reflejan nuestro propio conocimiento.
 
