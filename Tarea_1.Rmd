@@ -11,7 +11,7 @@ output:
     toc: yes
 ---
 # Declaración de compromiso ético
-Nosotros Nicolás Herrera y , declaramos que realizamos de manera grupal los pasos de la presente actividad. También declaramos no incurrir en copia, ni compartir nuestras respuestas con otras personas ni con otros grupos. Por lo que, ratificamos que las respuestas son de nuestra propia confección y reflejan nuestro propio conocimiento.
+Nosotros Nicolás Herrera, Sebastián Urbina y ..., declaramos que realizamos de manera grupal los pasos de la presente actividad. También declaramos no incurrir en copia, ni compartir nuestras respuestas con otras personas ni con otros grupos. Por lo que, ratificamos que las respuestas son de nuestra propia confección y reflejan nuestro propio conocimiento.
 
 # Instrucciones
 
@@ -173,10 +173,10 @@ Cabe resaltar, que se esperan tres gráficos de barras para las tres diferentes 
 ```{r}
 library(ggplot2)
 
-ggplot(data_tf) +
-  geom_bar(aes(x = region, y= justicia), stat="identity")
+ggplot(data_tf, aes(region, justicia)) +
+  geom_bar(data = subset(data_tf, region=="Atacama"), stat="identity") 
 
-# 10 conceptos más mencionados en Atacama
+  # 10 conceptos más mencionados en Atacama
 ```
 
 ```{r}
@@ -211,7 +211,10 @@ Explore el set de datos para responder las siguientes preguntas:
 Este tipo de gráfico nos ayudará a entender como se distribuye los datos por cada tipo de accidentes. Es decir, podremos apreciar que tan dispersos o similares son los datos en todo el dataset. También, puede ser útil para observar valores atípicos u outliers en los datos.
 
 ```{r}
-# RESPUESTA
+#Filtramos por año y regional
+filtro_tipos <- tipos[tipos$Muestra=="Regional" & tipos$Anio == 2011,]
+
+plot(filtro_tipos$TipoAccidente, filtro_tipos$Cantidad,xlab = "Tipo de accidente", ylab = "Cantidad", main="Cantidad de accidentes por tipo de accidente")
 ```
 
 2. ¿Qué aprecia con el gráfico anterior? ¿Qué otra forma de explorar los datos podría agregar? ¿Qué información adicional aporta? Adjunte una breve explicación.
