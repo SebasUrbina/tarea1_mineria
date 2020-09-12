@@ -139,8 +139,8 @@ data_tf[order(data_tf$justicia, decreasing = TRUE),][1:10,]
 
 
 ```{r}
-#Sumamos todas las columnas, y luego ordenamos
-sort(colSums(data_tf[,2:ncol(data_tf)]))[1:10]
+#Sumamos todas las columnas excepto la primera que no es numérica, y luego ordenamos
+sort(colSums(data_tf[,-1]))[1:10]
 
 ```
 
@@ -149,7 +149,6 @@ sort(colSums(data_tf[,2:ncol(data_tf)]))[1:10]
 
 
 ```{r}
-
 
 ```
 
@@ -172,6 +171,11 @@ Luego, genere un gráfico de barras (ggplot) que muestre los 10 conceptos más m
 Cabe resaltar, que se esperan tres gráficos de barras para las tres diferentes regiones:
 
 ```{r}
+library(ggplot2)
+
+ggplot(data_tf) +
+  geom_bar(aes(x = region, y= justicia), stat="identity")
+
 # 10 conceptos más mencionados en Atacama
 ```
 
