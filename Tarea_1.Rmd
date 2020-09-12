@@ -99,19 +99,23 @@ dim(data_tf)
 2. ¿Qué describe cada línea del dataset? (ejemplifique tomando la fila 85)
 
 ```{r}
-# RESPUESTA
+#Tomamos la fila 85 del dataset
+data_tf[85,]
 ```
+  R: Cada linea del dataset corresponde a una instancia, que en este caso corresponden a encuentros locales en ciertas localidades del país. Cada una de esta instancia posee como atributos la localidad donde se realizó el cabildo o encuentro y diferentes conceptos constitucionales, los cuales están contabilizados sobre cuantas veces se mencionaron en cada encuentro.
 
 3. ¿Existen localidades repetidas en el dataset? Adjunte el código o indique cómo llegó a esa conclusión. 
 
 ```{r}
-# RESPUESTA
+dim(unique(data_tf))
 ```
-
+  R: Utilizamos la función unique() para encontrar los valóres únicos, y con dim(), podemos obtener la cantidad de valores únicos. Se puede notar que el dataset posee 328 filas únicas, que corresponden a la cantidad de filas que posee el dataset. Por lo tanto no existen localidades repetidas.
+  
 4. Liste los nombres de las columnas del dataset `data_tf`. Adjunte código en R y *recuerde* usar `head` si el resultado es muy largo.
 
 ```{r}
-# RESPUESTA
+#Usamos colnames(), que nos entrega un vector con el nombre de las columnas del dataset
+head(colnames(data_tf))
 ```
 
 
@@ -120,13 +124,14 @@ dim(data_tf)
 1. Liste todas las localidades donde *no* se discutió el concepto `a_la_salud`. 
 
 ```{r}
-# RESPUESTA
+data_tf[data_tf$a_la_salud == 0,]
 ```
 
 2. Liste las 10 localidades que más mencionaron el concepto `justicia`. 
 
 ```{r}
-# RESPUESTA
+#Primero ordenamos el vector de justicia de forma decreciente y filtramos el dataset con ese orden, seleccionando las 10 primeras filas/localidades.
+data_tf[order(data_tf$justicia, decreasing = TRUE),][1:10,]
 ```
 
 
@@ -134,7 +139,9 @@ dim(data_tf)
 
 
 ```{r}
-# RESPUESTA
+#Sumamos todas las columnas, y luego ordenamos
+sort(colSums(data_tf[,2:ncol(data_tf)]))[1:10]
+
 ```
 
 
@@ -142,7 +149,8 @@ dim(data_tf)
 
 
 ```{r}
-# RESPUESTA
+
+
 ```
 
 5. Ejecute el siguiente código que permitirá agregar una nueva columna a nuestro dataframe que solo tendrá el nombre de la región.
