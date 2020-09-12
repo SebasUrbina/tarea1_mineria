@@ -10,7 +10,6 @@ output:
   pdf_document:
     toc: yes
 ---
-#test
 # Declaración de compromiso ético
 Nosotros **AGREGUEN SUS NOMBRES**, declaramos que realizamos de manera grupal los pasos de la presente actividad. También declaramos no incurrir en copia, ni compartir nuestras respuestas con otras personas ni con otros grupos. Por lo que, ratificamos que las respuestas son de nuestra propia confección y reflejan nuestro propio conocimiento.
 
@@ -88,15 +87,15 @@ data_tf <- read.csv("http://dcc.uchile.cl/~hsarmien/mineria/datasets/actas.txt",
 ```
 
 **Por cada pregunta adjunte el código R que utilizó para llegar a la respuesta. Respuestas sin código no recibirán puntaje**
-
 ### Exploración básica
 
 1. ¿Cuáles son las dimensiones del dataset (filas, columnas)? Adjunte código o indique cómo determinó la cantidad de datos total. 
 
 ```{r}
-# RESPUESTA
+dim(data_tf)
 ```
-
+  R: El dataset posee 328 filas y 113 columnas. Hicimos uso de la función dim().
+  
 2. ¿Qué describe cada línea del dataset? (ejemplifique tomando la fila 85)
 
 ```{r}
