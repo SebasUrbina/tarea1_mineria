@@ -31,7 +31,9 @@ La primera parte de esta actividad son preguntas teóricas que avanzaron en las 
 
 *1. ¿Cuál es el objetivo de Minería de datos y qué la diferencia de Machine Learning? De un ejemplo.*
 
-**Respuesta:** El objectivo de la Minería de Datos principalmente es obtener conocimiento a partir de grande volumenes de datos, de forma automática, no manual, pues nos tomaría años procesar tanta informacion. Asimismo, con esta información agilizar y mejorar la toma de desiciones.
+**Respuesta:** 
+
+El objectivo de la Minería de Datos principalmente es obtener conocimiento a partir de grande volumenes de datos, de forma automática, no manual, pues nos tomaría años procesar tanta informacion. Asimismo, con esta información agilizar y mejorar la toma de desiciones.
 
 Con respecto a la diferencia de Minería de Datos con Machine Learning, el ML se encarga de generar predicciones a partir de datos o específicamente conjuntos de entrenamientos, tecnicamente se entrenan algoritmos en base a grandes cantidades de datos para predecir compartamiento similar a humanos, mientras que la minería de datos nos permite obtener conclusiones o informació útil a través de los datos, como puede ser patrones de comportamiento y relaciones entre variables, etc. A modo de ejemplo, podemos utilizar un algoritmo en base a Machile Learning para *predecir* si mañana va a llover, en contraste a Minería de Datos podemos obtener alguna información interesante sobre el clima, como por ejemplo que este año ha llovido más con respecto a años anterior, que el agua caída en cierta región x ha aumentado en los últimos años, etc.
 
@@ -40,6 +42,11 @@ Con respecto a la diferencia de Minería de Datos con Machine Learning, el ML se
 
 **Respuesta:**
 
+Clasificación: Corresponde a un tipo de método predictivo o de aprendizaje supervisado, que utiliza variables para predecedir valores futuros o otras variables desconocidas. Se necesita un set de entrenamiento con las respectivas variables y la clase para cada instancia, de tal forma que si tenemos datos de imágenes de gatos y queremos crear un clasificador de imágenes de gatos(si es gato o no) el set de entrenamiento debe estar previamente etiquetado o las clases definidas, de esta forma el modelo aprende y es posible que pueda identificar/clasificar una nueva imagen, prediciendo si es gato o no.
+
+Clustering: Corresponde a un tipo de método descriptivo o de aprendizaje no supervisado, que permite encontrar patrones en ciertos conjuntos de datos, agrupar datos automaticamente por carácteristicas comunes encontradas por el algoritmo, etc. El objetivo del algoritmo es encontrar, si es que existen, patrones en base a los atributos de los datos.
+
+Una de las principales diferencias de estos métodos, es que clasificación requiere datos con su respectiva clase o etiqueta, es por esto además que se considera como un tipo de método supervisado, en otras palabras, debemos entrenar nuestro modelo diciéndole al algoritmo a qué clase o categoría corresponde cada instancia, es esta forma aprende el algoritmo y es capaz de realizar predicciónes en base a nuevos datos. En cambio, clustering se basa únicamente en los atributos de los datos y no necesita la clase de estos. Asimismo, el objetivo de clasificación es "predecir" en cambio clustering busca "encontrar patrones".
 
 *3. ¿Qué desafios existen en Minería de datos?*
 
