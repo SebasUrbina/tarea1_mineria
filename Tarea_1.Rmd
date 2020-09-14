@@ -11,7 +11,7 @@ output:
     toc: yes
 ---
 # Declaración de compromiso ético
-Nosotros Nicolás Herrera, Sebastián Urbina y ..., declaramos que realizamos de manera grupal los pasos de la presente actividad. También declaramos no incurrir en copia, ni compartir nuestras respuestas con otras personas ni con otros grupos. Por lo que, ratificamos que las respuestas son de nuestra propia confección y reflejan nuestro propio conocimiento.
+Nosotros Nicolás Herrera, Sebastián Urbina y Samuel Sánchez, declaramos que realizamos de manera grupal los pasos de la presente actividad. También declaramos no incurrir en copia, ni compartir nuestras respuestas con otras personas ni con otros grupos. Por lo que, ratificamos que las respuestas son de nuestra propia confección y reflejan nuestro propio conocimiento.
 
 # Instrucciones
 
