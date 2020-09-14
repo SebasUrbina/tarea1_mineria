@@ -35,7 +35,7 @@ La primera parte de esta actividad son preguntas teóricas que avanzaron en las 
 
 El objectivo de la Minería de Datos principalmente es obtener conocimiento a partir de grande volumenes de datos, de forma automática, no manual, pues nos tomaría años procesar tanta informacion. Asimismo, con esta información agilizar y mejorar la toma de desiciones.
 
-Con respecto a la diferencia de Minería de Datos con Machine Learning, el ML se encarga de generar predicciones a partir de datos o específicamente conjuntos de entrenamientos, tecnicamente se entrenan algoritmos en base a grandes cantidades de datos para predecir compartamiento similar a humanos, mientras que la minería de datos nos permite obtener conclusiones o informació útil a través de los datos, como puede ser patrones de comportamiento y relaciones entre variables, etc. A modo de ejemplo, podemos utilizar un algoritmo en base a Machile Learning para *predecir* si mañana va a llover, en contraste a Minería de Datos podemos obtener alguna información interesante sobre el clima, como por ejemplo que este año ha llovido más con respecto a años anterior, que el agua caída en cierta región x ha aumentado en los últimos años, etc.
+Con respecto a la diferencia de Minería de Datos con Machine Learning, el ML se encarga de generar predicciones a partir de datos o específicamente conjuntos de entrenamientos, tecnicamente se entrenan algoritmos en base a grandes cantidades de datos para predecir compartamiento similar a humanos, mientras que la minería de datos nos permite obtener conclusiones o información útil a través de los datos, como puede ser patrones de comportamiento y relaciones entre variables, etc. A modo de ejemplo, podemos utilizar un algoritmo en base a Machile Learning para *predecir* si mañana va a llover, en contraste a Minería de Datos podemos obtener alguna información interesante sobre el clima, como por ejemplo que este año ha llovido más con respecto a años anterior, que el agua caída en cierta región x ha aumentado en los últimos años, etc.
 
 
 *2. Describa y compare los siguientes métodos usados en Minería de datos: clasificación vs. clustering.*
@@ -74,20 +74,32 @@ Bajo todos los pilares mencionados anteriormente repercuten los desafios de la m
 
 **Respuesta:**
 
+Ambos definen datos cuantitativos (medidas estimables), se diferencian principalmente en que los datos de tipo intervalo no poseen un cero absoluto, mientras que lo de razon, si. Es por esto que los datos de tipo intervalo no pueden ser operados con la multiplicacion ni con la division (su cero es arbitrario). Algunos ejemplos de datos intervalo son las fechas o temperaturas en °C o °F, y de datos de tipo razon el largo, la hora o la temperatura en K (la escala Kelvin si tiene una 0 absoluto).
+
 
 *5. ¿Qué factores que ocasionan errores en el análisis de datos deben ser considerados para la limpieza de un set de datos?*
 
-**Respuesta:**
+**Respuesta:** POR COMPLETAR.
+
+- Ruido:
+- Outliers:
+- Valores faltantes:
+- Valores inconsistentes:
+- Datos duplicados:
 
 
 *6. ¿Qué es el análisis exploratorio de datos o EDA?*
 
-**Respuesta:**
+**Respuesta:** FALTA DESARROLLAR.
 
+Es un conjunto de tecnicas utilizadas para comprender de manera rapida la naturaleza de un dataset. Se basa principalmente en 2 criterios: Las estadisticas de resumen y la visualizacion de datos.
 
 *7. Describa las medidas de tendencia central: media y mediana. Exponga la diferencia entre ambas.*
 
-**Respuesta:**
+**Respuesta:** POR COMPLETAR.
+
+- Media:
+- Mediana:
 
 
 *8. ¿Qué es una matriz de correlación y para qué sirve?*
@@ -97,7 +109,13 @@ Bajo todos los pilares mencionados anteriormente repercuten los desafios de la m
 
 *9. Explique cómo se construye un Boxplot y exponga cómo se identifican los valores atípicos u outliers en este tipo de gráfico.*
 
-**Respuesta:**
+**Respuesta:** FALTA DESARROLLAR.
+
+Un boxplot se construye a partir de los percentiles:
+  - Contiene un rectangulo construido en base al 1er y 3er Cuartil (Percentiles 25 y 75) -> su altura es RIC (Q3-Q1).
+  - Al rectangulo lo divide horizontalmente una linea, correspondiente a la mediana (Percentil 50 o 2do Cuartil)
+  - A partir de cada extremo del rectangulo (superior e inferior) nace una recta o brazo de un determinado largo: El brazo inferior es de largo Li= Q1 - 1.5RIC, y el superior Ls= Q3 + 1.5RIC.
+  - Se definen los valores fuera de los brazos (mas externos) como atipicos u outliers.
 
 
 ## Práctica 
