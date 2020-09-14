@@ -52,6 +52,23 @@ Una de las principales diferencias de estos métodos, es que clasificación requ
 
 **Respuesta:**
 
+Los desafios se dividen en distintos conceptos:
+
+- Escalabilidad: Se refiere principalmente a que los modelos funcionen a gran escala, es decir, con grandes cantidades de datos.
+
+- Dimensionalidad: Se refiere a encontrar metodos que sean eficientes bajo diferentes grados de dimensionalidad, por ejemplo, puede ocurrer que se tiene un dataset con miles de características, sin embargo no se encuentran patrones en los datos, lo cual puede ser muy costoso para la máquina. Asimismo, se tiene el otro extremo, en datos con pocas características es muy dificil describir el comportamiento por falta de información. 
+
+- Datos complejos y heterógenos: Hace alusión a la estructura de los datos y a la complejidad de asociar datos heterógenos, lo que se traduce en dificultad para encontrar patrones.
+
+- Calidad de los datos: Tiene que ver con la forma en que están ordenados los datos, pueden haber datos incompletos, datos desbalanceados, datos mal separados, etc. La calidad es muy importante y se gasta bastante tiempo en limpiar los datos porque no todos los datos están ordenados en tablas y bien estructurados.
+
+- Distribución de datos y propiedad: El donde y como se transfiere la información, donde se almacena y quien es el real propietario de esta.
+
+- Privacidad: Lo cual se refiere la privacidad de nuestros datos, que tan públicos son estos y como pueden vulnerar nuestros derechos.
+
+- Streaming: Constantemente se están generado datos no estructurados, como imágenes, videos, streaming los cuales son muy complejos de analizar.
+
+Bajo todos los pilares mencionados anteriormente repercuten los desafios de la minería de datos, es imprescindible ir mejorando los modelos y procesos de adquisición y manejo de información.
 
 *4. Respecto a los tipos de atributo, ¿cuál es la diferencia entre razón e intervalo?*
 
