@@ -427,7 +427,7 @@ summary {
 
 <div id="declaración-de-compromiso-ético" class="section level1" number="1">
 <h1 number="1"><span class="header-section-number">1</span> Declaración de compromiso ético</h1>
-<p>Nosotros <strong>AGREGUEN SUS NOMBRES</strong>, declaramos que realizamos de manera grupal los pasos de la presente actividad. También declaramos no incurrir en copia, ni compartir nuestras respuestas con otras personas ni con otros grupos. Por lo que, ratificamos que las respuestas son de nuestra propia confección y reflejan nuestro propio conocimiento.</p>
+<p>Nosotros Nicolás Herrera, Sebastián Urbina y …, declaramos que realizamos de manera grupal los pasos de la presente actividad. También declaramos no incurrir en copia, ni compartir nuestras respuestas con otras personas ni con otros grupos. Por lo que, ratificamos que las respuestas son de nuestra propia confección y reflejan nuestro propio conocimiento.</p>
 </div>
 <div id="instrucciones" class="section level1" number="2">
 <h1 number="2"><span class="header-section-number">2</span> Instrucciones</h1>
@@ -445,10 +445,26 @@ summary {
 <h2 number="3.1"><span class="header-section-number">3.1</span> Teoría</h2>
 <p><em>1. ¿Cuál es el objetivo de Minería de datos y qué la diferencia de Machine Learning? De un ejemplo.</em></p>
 <p><strong>Respuesta:</strong></p>
+<p>El objectivo de la Minería de Datos principalmente es obtener conocimiento a partir de grande volumenes de datos, de forma automática, no manual, pues nos tomaría años procesar tanta informacion. Asimismo, con esta información agilizar y mejorar la toma de desiciones.</p>
+<p>Con respecto a la diferencia de Minería de Datos con Machine Learning, el ML se encarga de generar predicciones a partir de datos o específicamente conjuntos de entrenamientos, tecnicamente se entrenan algoritmos en base a grandes cantidades de datos para predecir compartamiento similar a humanos, mientras que la minería de datos nos permite obtener conclusiones o informació útil a través de los datos, como puede ser patrones de comportamiento y relaciones entre variables, etc. A modo de ejemplo, podemos utilizar un algoritmo en base a Machile Learning para <em>predecir</em> si mañana va a llover, en contraste a Minería de Datos podemos obtener alguna información interesante sobre el clima, como por ejemplo que este año ha llovido más con respecto a años anterior, que el agua caída en cierta región x ha aumentado en los últimos años, etc.</p>
 <p><em>2. Describa y compare los siguientes métodos usados en Minería de datos: clasificación vs. clustering.</em></p>
 <p><strong>Respuesta:</strong></p>
+<p>Clasificación: Corresponde a un tipo de método predictivo o de aprendizaje supervisado, que utiliza variables para predecedir valores futuros o otras variables desconocidas. Se necesita un set de entrenamiento con las respectivas variables y la clase para cada instancia, de tal forma que si tenemos datos de imágenes de gatos y queremos crear un clasificador de imágenes de gatos(si es gato o no) el set de entrenamiento debe estar previamente etiquetado o las clases definidas, de esta forma el modelo aprende y es posible que pueda identificar/clasificar una nueva imagen, prediciendo si es gato o no.</p>
+<p>Clustering: Corresponde a un tipo de método descriptivo o de aprendizaje no supervisado, que permite encontrar patrones en ciertos conjuntos de datos, agrupar datos automaticamente por carácteristicas comunes encontradas por el algoritmo, etc. El objetivo del algoritmo es encontrar, si es que existen, patrones en base a los atributos de los datos.</p>
+<p>Una de las principales diferencias de estos métodos, es que clasificación requiere datos con su respectiva clase o etiqueta, es por esto además que se considera como un tipo de método supervisado, en otras palabras, debemos entrenar nuestro modelo diciéndole al algoritmo a qué clase o categoría corresponde cada instancia, es esta forma aprende el algoritmo y es capaz de realizar predicciónes en base a nuevos datos. En cambio, clustering se basa únicamente en los atributos de los datos y no necesita la clase de estos. Asimismo, el objetivo de clasificación es “predecir” en cambio clustering busca “encontrar patrones”.</p>
 <p><em>3. ¿Qué desafios existen en Minería de datos?</em></p>
 <p><strong>Respuesta:</strong></p>
+<p>Los desafios se dividen en distintos conceptos:</p>
+<ul>
+<li><p>Escalabilidad: Se refiere principalmente a que los modelos funcionen a gran escala, es decir, con grandes cantidades de datos.</p></li>
+<li><p>Dimensionalidad: Se refiere a encontrar metodos que sean eficientes bajo diferentes grados de dimensionalidad, por ejemplo, puede ocurrer que se tiene un dataset con miles de características, sin embargo no se encuentran patrones en los datos, lo cual puede ser muy costoso para la máquina. Asimismo, se tiene el otro extremo, en datos con pocas características es muy dificil describir el comportamiento por falta de información.</p></li>
+<li><p>Datos complejos y heterógenos: Hace alusión a la estructura de los datos y a la complejidad de asociar datos heterógenos, lo que se traduce en dificultad para encontrar patrones.</p></li>
+<li><p>Calidad de los datos: Tiene que ver con la forma en que están ordenados los datos, pueden haber datos incompletos, datos desbalanceados, datos mal separados, etc. La calidad es muy importante y se gasta bastante tiempo en limpiar los datos porque no todos los datos están ordenados en tablas y bien estructurados.</p></li>
+<li><p>Distribución de datos y propiedad: El donde y como se transfiere la información, donde se almacena y quien es el real propietario de esta.</p></li>
+<li><p>Privacidad: Lo cual se refiere la privacidad de nuestros datos, que tan públicos son estos y como pueden vulnerar nuestros derechos.</p></li>
+<li><p>Streaming: Constantemente se están generado datos no estructurados, como imágenes, videos, streaming los cuales son muy complejos de analizar.</p></li>
+</ul>
+<p>Bajo todos los pilares mencionados anteriormente repercuten los desafios de la minería de datos, es imprescindible ir mejorando los modelos y procesos de adquisición y manejo de información.</p>
 <p><em>4. Respecto a los tipos de atributo, ¿cuál es la diferencia entre razón e intervalo?</em></p>
 <p><strong>Respuesta:</strong></p>
 <p><em>5. ¿Qué factores que ocasionan errores en el análisis de datos deben ser considerados para la limpieza de un set de datos?</em></p>
@@ -478,35 +494,1445 @@ summary {
 <ol start="2" style="list-style-type: decimal">
 <li>¿Qué describe cada línea del dataset? (ejemplifique tomando la fila 85)</li>
 </ol>
-<pre class="r"><code># RESPUESTA</code></pre>
+<pre class="r"><code>#Tomamos la fila 85 del dataset
+data_tf[85,]</code></pre>
+<pre><code>##                   localidad a_huelga a_la_educacion a_la_honra._al_honor
+## 85 Coquimbo/Elqui/Andacollo        0              1                    0
+##    a_la_identidad_cultural a_la_informacion a_la_integracion_de_discapacidad
+## 85                       0                0                                0
+##    a_la_integridad_fisica_y_psiquica a_la_nacionalidad a_la_participacion
+## 85                                 1                 1                  0
+##    a_la_salud a_la_seguridad.vida_sin_violencia a_la_seguridad_social a_la_vida
+## 85          2                                 0                     0         0
+##    a_la_vivienda_digna a_sindicalizarse_y_a_la_negociacion_colectiva
+## 85                   1                                             0
+##    a_sufragio.votar acceso_a_informacion_publica acceso_a_la_cultura
+## 85                2                            0                   0
+##    al_salario_equitativo al_trabajo amistad_civica autonomia.libertad
+## 85                     0          1              2                  0
+##    bien_comun.comunidad cambio_o_reforma_constitucional ciudadania
+## 85                    0                               0          0
+##    congreso_o_parlamento_.estructura_y_funciones.
+## 85                                              2
+##    contraloria_general.tribunales_de_cuentas cumplimiento_de_las_leyes_y_normas
+## 85                                         1                                  2
+##    cumplimiento_de_obligaciones_fiscales
+## 85                                     0
+##    cumplimiento_de_tratados_y_obligaciones_internacionales
+## 85                                                       2
+##    de_los_pueblos_indigenas de_peticion_ante_las_autoridades de_propiedad
+## 85                        1                                0            0
+##    de_proteccion_y_conservacion_de_patrimonio_historico_y_cultural
+## 85                                                               3
+##    de_satisfacer_cargas_publicas
+## 85                             1
+##    deberes_de_proteccion_de_conservacion_de_la_naturaleza
+## 85                                                      3
+##    defensor_del_pueblo.ciudadano democracia derecho_de_asociacion
+## 85                             0          1                     0
+##    derechos_del_nino._nina_y_adolescente desarrollo descentralizacion dignidad
+## 85                                     0          0                 1        2
+##    diversidad division_territorial
+## 85          0                    0
+##    ejercicio_legitimo_y_no_abusivo_de_los_derechos emprendimiento_libre
+## 85                                               1                    0
+##    equidad_de_genero estado_de_derecho estado_de_excepcion estado_laico
+## 85                 1                 0                   0            0
+##    forma_de_estado._federalismo.autonomias_regionales fuerzas_armadas
+## 85                                                  0               0
+##    gobierno_local.municipal gobierno_nacional.estructura_y_funciones.
+## 85                        2                                         2
+##    gobierno_provincial gobierno_regional identidad_cultural igualdad
+## 85                   2                 3                  1        3
+##    igualdad_ante_la_ley igualdad_ante_las_cargas_publicas
+## 85                    1                                 0
+##    igualdad_ante_los_tributos igualdad_de_acceso_a_la_justicia.debido_proceso
+## 85                          1                                               1
+##    igualdad_de_genero inclusion innovacion.creatividad integracion
+## 85                  1         1                      0           0
+##    jefatura_de_gobierno juicio_politico_.acusacion_constitucional justicia
+## 85                    0                                         0        2
+##    justicia_constitucional justicia_electoral libertad_ambulatoria
+## 85                       0                  0                    0
+##    libertad_de_conciencia libertad_de_ensenanza libertad_de_expresion
+## 85                      0                     0                     1
+##    libertad_de_trabajo libertad_personal
+## 85                   0                 0
+##    libre_iniciativa_economica_._libre_empresa
+## 85                                          0
+##    ministerio_publico._defensoria_publica multiculturalidad no_discriminacion
+## 85                                      1                 1                 1
+##    participacion patriotismo paz.convivencia_pacifica
+## 85             0           0                        0
+##    plebiscitos._referendos_y_consultas pluralismo plurinacionalismo
+## 85                                   1          0                 0
+##    poder_judicial_.estructura_y_funciones. presidencia_de_la_republica
+## 85                                       3                           3
+##    privacidad_e_intimidad probidad proteccion_judicial_de_los_derechos
+## 85                      0        0                                   0
+##    proteccion._promocion_y_respeto_de_los_derechos_humanos_y_fundamentales
+## 85                                                                       2
+##    republica respeto respeto.conservacion_de_la_naturaleza_o_medio_ambiente
+## 85         0       2                                                      3
+##    respeto_a_la_naturaleza.medio_ambiente respeto_de_derechos_de_otros
+## 85                                      2                            3
+##    respeto_por_la_constitucion responsabilidad reunion_pacifica
+## 85                           4               0                0
+##    regimen_de_gobierno_presidencial.semi.presidencial.parlamentario seguridad
+## 85                                                                1         1
+##    ser_elegido_en_cargos_publicos servicio_a_la_comunidad soberania solidaridad
+## 85                              1                       1         0           0
+##    subsidiaridad tolerancia transparencia_y_publicidad unidad
+## 85             0          0                          0      0</code></pre>
+<p>R: Cada linea del dataset corresponde a una instancia, que en este caso corresponden a encuentros locales en ciertas localidades del país. Cada una de esta instancia posee como atributos la localidad donde se realizó el cabildo o encuentro y diferentes conceptos constitucionales, los cuales están contabilizados sobre cuantas veces se mencionaron en cada encuentro.</p>
 <ol start="3" style="list-style-type: decimal">
 <li>¿Existen localidades repetidas en el dataset? Adjunte el código o indique cómo llegó a esa conclusión.</li>
 </ol>
-<pre class="r"><code># RESPUESTA</code></pre>
+<pre class="r"><code>dim(unique(data_tf))</code></pre>
+<pre><code>## [1] 328 113</code></pre>
+<p>R: Utilizamos la función unique() para encontrar los valóres únicos, y con dim(), podemos obtener la cantidad de valores únicos. Se puede notar que el dataset posee 328 filas únicas, que corresponden a la cantidad de filas que posee el dataset. Por lo tanto no existen localidades repetidas.</p>
 <ol start="4" style="list-style-type: decimal">
 <li>Liste los nombres de las columnas del dataset <code>data_tf</code>. Adjunte código en R y <em>recuerde</em> usar <code>head</code> si el resultado es muy largo.</li>
 </ol>
-<pre class="r"><code># RESPUESTA</code></pre>
+<pre class="r"><code>#Usamos colnames(), que nos entrega un vector con el nombre de las columnas del dataset
+head(colnames(data_tf))</code></pre>
+<pre><code>## [1] &quot;localidad&quot;               &quot;a_huelga&quot;               
+## [3] &quot;a_la_educacion&quot;          &quot;a_la_honra._al_honor&quot;   
+## [5] &quot;a_la_identidad_cultural&quot; &quot;a_la_informacion&quot;</code></pre>
 <div id="análisis" class="section level3" number="3.2.1">
 <h3 number="3.2.1"><span class="header-section-number">3.2.1</span> Análisis</h3>
 <ol style="list-style-type: decimal">
 <li>Liste todas las localidades donde <em>no</em> se discutió el concepto <code>a_la_salud</code>.</li>
 </ol>
-<pre class="r"><code># RESPUESTA</code></pre>
+<pre class="r"><code>data_tf[data_tf$a_la_salud == 0,]</code></pre>
+<pre><code>##                                                            localidad a_huelga
+## 3   Aisen del General Carlos Ibanez del Campo/Capitan Prat/O&#39;higgins        0
+## 14                           Antofagasta/El Loa/San Pedro de Atacama        0
+## 18                                Arica y Parinacota/Arica/Camarones        0
+## 36                                        Biobio/Bio Bio/Alto Biobio        0
+## 39                                               Biobio/Bio Bio/Laja        0
+## 42                                            Biobio/Bio Bio/Negrete        0
+## 57                                     Biobio/Concepcion/Santa Juana        0
+## 75                                           Biobio/Nuble/San Fabian        0
+## 120                                     La Araucania/Malleco/Ercilla        0
+## 176                                    Los Lagos/Osorno/Puerto Octay        0
+## 186                                           Los Rios/Ranco/Futrono        0
+## 190                                         Los Rios/Valdivia/Corral        0
+## 202   Magallanes y de la Antartica Chilena/Tierra del Fuego/Timaukel        0
+## 225                                            Maule/Talca/Empedrado        0
+## 284                                     Tarapaca/El Tamarugal/Camina        0
+## 305                                     Valparaiso/Quillota/Hijuelas        0
+## 324                             Valparaiso/Valparaiso/Juan Fernandez        0
+##     a_la_educacion a_la_honra._al_honor a_la_identidad_cultural
+## 3                0                    0                       0
+## 14               0                    0                       0
+## 18               0                    0                       0
+## 36               0                    0                       0
+## 39               0                    0                       0
+## 42               0                    0                       0
+## 57               0                    0                       0
+## 75               0                    0                       0
+## 120              0                    0                       0
+## 176              0                    0                       0
+## 186              2                    1                       0
+## 190              0                    0                       0
+## 202              0                    0                       0
+## 225              1                    0                       0
+## 284              0                    0                       0
+## 305              1                    0                       0
+## 324              0                    0                       0
+##     a_la_informacion a_la_integracion_de_discapacidad
+## 3                  0                                0
+## 14                 0                                0
+## 18                 0                                0
+## 36                 0                                0
+## 39                 0                                0
+## 42                 0                                0
+## 57                 1                                0
+## 75                 0                                0
+## 120                0                                0
+## 176                0                                0
+## 186                0                                0
+## 190                0                                1
+## 202                0                                0
+## 225                0                                0
+## 284                0                                0
+## 305                0                                0
+## 324                0                                0
+##     a_la_integridad_fisica_y_psiquica a_la_nacionalidad a_la_participacion
+## 3                                   0                 0                  0
+## 14                                  0                 0                  1
+## 18                                  0                 0                  1
+## 36                                  0                 0                  0
+## 39                                  0                 0                  0
+## 42                                  0                 0                  1
+## 57                                  0                 0                  1
+## 75                                  0                 0                  0
+## 120                                 0                 0                  0
+## 176                                 0                 0                  0
+## 186                                 1                 0                  0
+## 190                                 0                 0                  0
+## 202                                 0                 0                  0
+## 225                                 0                 0                  0
+## 284                                 1                 1                  1
+## 305                                 0                 0                  0
+## 324                                 0                 0                  0
+##     a_la_salud a_la_seguridad.vida_sin_violencia a_la_seguridad_social
+## 3            0                                 0                     0
+## 14           0                                 0                     0
+## 18           0                                 0                     0
+## 36           0                                 0                     0
+## 39           0                                 1                     0
+## 42           0                                 1                     0
+## 57           0                                 1                     1
+## 75           0                                 0                     0
+## 120          0                                 0                     0
+## 176          0                                 0                     0
+## 186          0                                 0                     0
+## 190          0                                 0                     1
+## 202          0                                 1                     0
+## 225          0                                 0                     0
+## 284          0                                 1                     0
+## 305          0                                 1                     1
+## 324          0                                 0                     0
+##     a_la_vida a_la_vivienda_digna a_sindicalizarse_y_a_la_negociacion_colectiva
+## 3           0                   0                                             0
+## 14          0                   0                                             0
+## 18          1                   0                                             0
+## 36          0                   0                                             0
+## 39          0                   0                                             0
+## 42          0                   0                                             0
+## 57          0                   0                                             0
+## 75          0                   0                                             1
+## 120         1                   0                                             0
+## 176         0                   0                                             0
+## 186         3                   0                                             1
+## 190         1                   0                                             0
+## 202         1                   0                                             0
+## 225         0                   0                                             0
+## 284         1                   0                                             0
+## 305         0                   1                                             0
+## 324         0                   0                                             0
+##     a_sufragio.votar acceso_a_informacion_publica acceso_a_la_cultura
+## 3                  0                            0                   0
+## 14                 0                            1                   0
+## 18                 1                            0                   0
+## 36                 0                            0                   0
+## 39                 0                            0                   0
+## 42                 0                            0                   0
+## 57                 2                            1                   0
+## 75                 1                            0                   0
+## 120                1                            0                   0
+## 176                0                            0                   0
+## 186                1                            0                   1
+## 190                0                            1                   0
+## 202                0                            0                   0
+## 225                1                            0                   0
+## 284                1                            0                   0
+## 305                1                            0                   0
+## 324                0                            0                   0
+##     al_salario_equitativo al_trabajo amistad_civica autonomia.libertad
+## 3                       0          0              0                  0
+## 14                      0          0              0                  1
+## 18                      0          0              0                  0
+## 36                      0          0              0                  0
+## 39                      0          1              0                  0
+## 42                      0          1              1                  0
+## 57                      0          0              1                  0
+## 75                      0          0              0                  0
+## 120                     0          1              0                  0
+## 176                     0          0              0                  0
+## 186                     1          0              0                  2
+## 190                     1          0              0                  0
+## 202                     0          0              0                  0
+## 225                     0          0              0                  0
+## 284                     0          0              1                  1
+## 305                     0          0              0                  1
+## 324                     0          0              0                  1
+##     bien_comun.comunidad cambio_o_reforma_constitucional ciudadania
+## 3                      0                               1          0
+## 14                     1                               0          0
+## 18                     1                               0          0
+## 36                     0                               0          0
+## 39                     0                               0          0
+## 42                     0                               1          0
+## 57                     1                               0          0
+## 75                     0                               0          0
+## 120                    0                               0          0
+## 176                    0                               0          0
+## 186                    1                               1          0
+## 190                    0                               0          0
+## 202                    1                               1          0
+## 225                    0                               0          0
+## 284                    1                               0          1
+## 305                    0                               0          0
+## 324                    1                               0          0
+##     congreso_o_parlamento_.estructura_y_funciones.
+## 3                                                0
+## 14                                               1
+## 18                                               1
+## 36                                               0
+## 39                                               1
+## 42                                               0
+## 57                                               0
+## 75                                               0
+## 120                                              0
+## 176                                              0
+## 186                                              1
+## 190                                              0
+## 202                                              1
+## 225                                              1
+## 284                                              1
+## 305                                              0
+## 324                                              0
+##     contraloria_general.tribunales_de_cuentas
+## 3                                           1
+## 14                                          0
+## 18                                          1
+## 36                                          0
+## 39                                          1
+## 42                                          0
+## 57                                          0
+## 75                                          0
+## 120                                         1
+## 176                                         0
+## 186                                         2
+## 190                                         0
+## 202                                         0
+## 225                                         0
+## 284                                         0
+## 305                                         1
+## 324                                         0
+##     cumplimiento_de_las_leyes_y_normas cumplimiento_de_obligaciones_fiscales
+## 3                                    0                                     0
+## 14                                   0                                     0
+## 18                                   0                                     0
+## 36                                   0                                     0
+## 39                                   1                                     1
+## 42                                   0                                     0
+## 57                                   0                                     0
+## 75                                   0                                     0
+## 120                                  1                                     1
+## 176                                  1                                     0
+## 186                                  1                                     0
+## 190                                  1                                     0
+## 202                                  1                                     0
+## 225                                  0                                     0
+## 284                                  1                                     1
+## 305                                  1                                     0
+## 324                                  0                                     0
+##     cumplimiento_de_tratados_y_obligaciones_internacionales
+## 3                                                         0
+## 14                                                        0
+## 18                                                        0
+## 36                                                        0
+## 39                                                        0
+## 42                                                        0
+## 57                                                        0
+## 75                                                        1
+## 120                                                       0
+## 176                                                       1
+## 186                                                       0
+## 190                                                       1
+## 202                                                       0
+## 225                                                       0
+## 284                                                       0
+## 305                                                       0
+## 324                                                       0
+##     de_los_pueblos_indigenas de_peticion_ante_las_autoridades de_propiedad
+## 3                          0                                0            1
+## 14                         1                                0            0
+## 18                         0                                0            0
+## 36                         0                                0            0
+## 39                         0                                0            0
+## 42                         0                                0            0
+## 57                         0                                0            0
+## 75                         0                                0            0
+## 120                        0                                0            0
+## 176                        0                                0            0
+## 186                        1                                0            0
+## 190                        0                                0            0
+## 202                        0                                0            0
+## 225                        0                                0            0
+## 284                        0                                0            0
+## 305                        1                                1            1
+## 324                        0                                0            0
+##     de_proteccion_y_conservacion_de_patrimonio_historico_y_cultural
+## 3                                                                 0
+## 14                                                                1
+## 18                                                                1
+## 36                                                                1
+## 39                                                                0
+## 42                                                                0
+## 57                                                                0
+## 75                                                                0
+## 120                                                               0
+## 176                                                               0
+## 186                                                               3
+## 190                                                               0
+## 202                                                               1
+## 225                                                               0
+## 284                                                               1
+## 305                                                               0
+## 324                                                               1
+##     de_satisfacer_cargas_publicas
+## 3                               0
+## 14                              0
+## 18                              0
+## 36                              0
+## 39                              0
+## 42                              0
+## 57                              0
+## 75                              0
+## 120                             0
+## 176                             0
+## 186                             0
+## 190                             0
+## 202                             0
+## 225                             0
+## 284                             1
+## 305                             0
+## 324                             0
+##     deberes_de_proteccion_de_conservacion_de_la_naturaleza
+## 3                                                        0
+## 14                                                       1
+## 18                                                       1
+## 36                                                       1
+## 39                                                       1
+## 42                                                       1
+## 57                                                       1
+## 75                                                       1
+## 120                                                      0
+## 176                                                      1
+## 186                                                      3
+## 190                                                      0
+## 202                                                      0
+## 225                                                      0
+## 284                                                      1
+## 305                                                      0
+## 324                                                      0
+##     defensor_del_pueblo.ciudadano democracia derecho_de_asociacion
+## 3                               0          1                     0
+## 14                              0          0                     1
+## 18                              1          1                     0
+## 36                              1          1                     0
+## 39                              1          0                     0
+## 42                              0          0                     0
+## 57                              0          0                     0
+## 75                              0          0                     0
+## 120                             0          1                     0
+## 176                             0          0                     0
+## 186                             2          2                     0
+## 190                             1          1                     0
+## 202                             1          0                     0
+## 225                             0          0                     0
+## 284                             0          1                     0
+## 305                             0          0                     0
+## 324                             1          0                     0
+##     derechos_del_nino._nina_y_adolescente desarrollo descentralizacion dignidad
+## 3                                       0          0                 1        0
+## 14                                      0          0                 1        0
+## 18                                      1          1                 1        0
+## 36                                      0          0                 1        0
+## 39                                      0          0                 0        1
+## 42                                      0          0                 1        0
+## 57                                      2          0                 1        0
+## 75                                      0          0                 1        0
+## 120                                     1          0                 1        0
+## 176                                     0          0                 0        0
+## 186                                     1          0                 0        0
+## 190                                     1          0                 1        1
+## 202                                     0          0                 1        0
+## 225                                     0          0                 0        0
+## 284                                     0          1                 1        0
+## 305                                     1          1                 1        1
+## 324                                     0          0                 0        0
+##     diversidad division_territorial
+## 3            0                    0
+## 14           0                    1
+## 18           1                    0
+## 36           0                    1
+## 39           0                    0
+## 42           0                    0
+## 57           0                    0
+## 75           0                    0
+## 120          0                    0
+## 176          0                    0
+## 186          0                    0
+## 190          0                    0
+## 202          0                    0
+## 225          0                    0
+## 284          0                    0
+## 305          0                    0
+## 324          1                    1
+##     ejercicio_legitimo_y_no_abusivo_de_los_derechos emprendimiento_libre
+## 3                                                 0                    0
+## 14                                                0                    0
+## 18                                                0                    0
+## 36                                                0                    0
+## 39                                                1                    0
+## 42                                                0                    0
+## 57                                                1                    0
+## 75                                                0                    0
+## 120                                               1                    0
+## 176                                               0                    0
+## 186                                               3                    0
+## 190                                               1                    0
+## 202                                               0                    0
+## 225                                               0                    0
+## 284                                               0                    0
+## 305                                               1                    1
+## 324                                               1                    0
+##     equidad_de_genero estado_de_derecho estado_de_excepcion estado_laico
+## 3                   0                 0                   0            0
+## 14                  0                 0                   0            0
+## 18                  0                 0                   0            0
+## 36                  0                 0                   0            0
+## 39                  1                 0                   0            0
+## 42                  0                 0                   0            0
+## 57                  0                 1                   0            0
+## 75                  0                 0                   0            0
+## 120                 0                 0                   0            0
+## 176                 0                 0                   0            0
+## 186                 1                 2                   0            0
+## 190                 1                 0                   0            0
+## 202                 0                 0                   0            0
+## 225                 1                 0                   0            0
+## 284                 0                 0                   0            0
+## 305                 1                 1                   0            0
+## 324                 0                 0                   0            0
+##     forma_de_estado._federalismo.autonomias_regionales fuerzas_armadas
+## 3                                                    0               0
+## 14                                                   1               0
+## 18                                                   1               0
+## 36                                                   0               0
+## 39                                                   0               0
+## 42                                                   0               0
+## 57                                                   1               0
+## 75                                                   0               0
+## 120                                                  0               1
+## 176                                                  1               1
+## 186                                                  2               0
+## 190                                                  1               1
+## 202                                                  1               0
+## 225                                                  0               0
+## 284                                                  0               0
+## 305                                                  0               1
+## 324                                                  0               0
+##     gobierno_local.municipal gobierno_nacional.estructura_y_funciones.
+## 3                          1                                         0
+## 14                         0                                         0
+## 18                         1                                         0
+## 36                         0                                         0
+## 39                         1                                         0
+## 42                         1                                         0
+## 57                         0                                         0
+## 75                         0                                         0
+## 120                        0                                         0
+## 176                        1                                         0
+## 186                        0                                         1
+## 190                        1                                         0
+## 202                        0                                         0
+## 225                        0                                         0
+## 284                        0                                         1
+## 305                        0                                         0
+## 324                        1                                         0
+##     gobierno_provincial gobierno_regional identidad_cultural igualdad
+## 3                     0                 0                  1        1
+## 14                    0                 1                  1        0
+## 18                    0                 1                  1        0
+## 36                    0                 0                  1        0
+## 39                    0                 1                  0        2
+## 42                    0                 1                  0        1
+## 57                    0                 0                  0        2
+## 75                    0                 0                  0        0
+## 120                   0                 1                  0        0
+## 176                   0                 0                  0        0
+## 186                   0                 2                  1        2
+## 190                   0                 1                  0        0
+## 202                   0                 1                  0        2
+## 225                   0                 0                  0        0
+## 284                   0                 0                  0        0
+## 305                   0                 0                  0        0
+## 324                   0                 0                  0        0
+##     igualdad_ante_la_ley igualdad_ante_las_cargas_publicas
+## 3                      0                                 0
+## 14                     1                                 0
+## 18                     0                                 0
+## 36                     0                                 0
+## 39                     1                                 0
+## 42                     0                                 0
+## 57                     0                                 0
+## 75                     1                                 0
+## 120                    0                                 0
+## 176                    0                                 0
+## 186                    2                                 0
+## 190                    0                                 0
+## 202                    0                                 0
+## 225                    0                                 0
+## 284                    0                                 0
+## 305                    1                                 0
+## 324                    0                                 0
+##     igualdad_ante_los_tributos igualdad_de_acceso_a_la_justicia.debido_proceso
+## 3                            0                                               0
+## 14                           0                                               0
+## 18                           0                                               0
+## 36                           0                                               0
+## 39                           0                                               0
+## 42                           0                                               0
+## 57                           0                                               1
+## 75                           0                                               0
+## 120                          0                                               0
+## 176                          0                                               0
+## 186                          0                                               0
+## 190                          0                                               0
+## 202                          0                                               0
+## 225                          0                                               0
+## 284                          0                                               0
+## 305                          0                                               0
+## 324                          0                                               0
+##     igualdad_de_genero inclusion innovacion.creatividad integracion
+## 3                    0         0                      0           0
+## 14                   0         0                      0           0
+## 18                   1         0                      0           0
+## 36                   0         0                      0           1
+## 39                   0         0                      0           0
+## 42                   0         0                      0           0
+## 57                   0         1                      0           0
+## 75                   1         0                      0           0
+## 120                  0         0                      1           0
+## 176                  0         0                      0           0
+## 186                  2         2                      0           0
+## 190                  0         0                      0           0
+## 202                  0         1                      0           0
+## 225                  1         0                      0           0
+## 284                  0         0                      0           0
+## 305                  0         1                      0           0
+## 324                  0         1                      0           0
+##     jefatura_de_gobierno juicio_politico_.acusacion_constitucional justicia
+## 3                      0                                         0        1
+## 14                     0                                         0        1
+## 18                     0                                         0        0
+## 36                     0                                         0        0
+## 39                     0                                         0        1
+## 42                     0                                         0        0
+## 57                     0                                         1        2
+## 75                     0                                         0        0
+## 120                    0                                         1        1
+## 176                    0                                         0        0
+## 186                    0                                         1        0
+## 190                    0                                         0        1
+## 202                    0                                         0        0
+## 225                    0                                         0        0
+## 284                    1                                         1        0
+## 305                    0                                         0        1
+## 324                    0                                         0        0
+##     justicia_constitucional justicia_electoral libertad_ambulatoria
+## 3                         0                  1                    0
+## 14                        0                  0                    0
+## 18                        0                  0                    0
+## 36                        0                  0                    0
+## 39                        0                  0                    0
+## 42                        0                  0                    0
+## 57                        0                  0                    0
+## 75                        0                  0                    0
+## 120                       1                  0                    0
+## 176                       0                  0                    0
+## 186                       0                  1                    0
+## 190                       0                  0                    0
+## 202                       1                  0                    0
+## 225                       0                  0                    0
+## 284                       0                  0                    0
+## 305                       0                  0                    0
+## 324                       0                  0                    0
+##     libertad_de_conciencia libertad_de_ensenanza libertad_de_expresion
+## 3                        0                     0                     0
+## 14                       0                     0                     0
+## 18                       0                     0                     0
+## 36                       0                     0                     0
+## 39                       0                     0                     0
+## 42                       0                     0                     0
+## 57                       0                     0                     0
+## 75                       0                     0                     0
+## 120                      0                     1                     0
+## 176                      0                     0                     0
+## 186                      0                     0                     0
+## 190                      1                     0                     0
+## 202                      0                     0                     0
+## 225                      0                     0                     0
+## 284                      0                     0                     0
+## 305                      0                     0                     1
+## 324                      0                     0                     0
+##     libertad_de_trabajo libertad_personal
+## 3                     0                 0
+## 14                    0                 0
+## 18                    0                 0
+## 36                    0                 0
+## 39                    0                 0
+## 42                    0                 0
+## 57                    0                 0
+## 75                    0                 0
+## 120                   0                 0
+## 176                   0                 0
+## 186                   0                 0
+## 190                   0                 0
+## 202                   0                 0
+## 225                   0                 0
+## 284                   0                 0
+## 305                   1                 0
+## 324                   0                 0
+##     libre_iniciativa_economica_._libre_empresa
+## 3                                            0
+## 14                                           0
+## 18                                           0
+## 36                                           0
+## 39                                           0
+## 42                                           0
+## 57                                           0
+## 75                                           0
+## 120                                          1
+## 176                                          0
+## 186                                          0
+## 190                                          0
+## 202                                          0
+## 225                                          0
+## 284                                          0
+## 305                                          1
+## 324                                          0
+##     ministerio_publico._defensoria_publica multiculturalidad no_discriminacion
+## 3                                        0                 0                 0
+## 14                                       0                 1                 0
+## 18                                       0                 0                 1
+## 36                                       0                 0                 0
+## 39                                       0                 0                 0
+## 42                                       0                 0                 1
+## 57                                       0                 1                 0
+## 75                                       0                 0                 0
+## 120                                      0                 0                 0
+## 176                                      0                 0                 0
+## 186                                      0                 0                 1
+## 190                                      1                 0                 0
+## 202                                      0                 0                 1
+## 225                                      0                 0                 0
+## 284                                      0                 0                 0
+## 305                                      0                 0                 0
+## 324                                      0                 0                 1
+##     participacion patriotismo paz.convivencia_pacifica
+## 3               0           0                        0
+## 14              0           0                        0
+## 18              0           0                        0
+## 36              0           0                        0
+## 39              0           0                        0
+## 42              0           0                        0
+## 57              1           0                        0
+## 75              0           0                        0
+## 120             0           0                        0
+## 176             0           0                        0
+## 186             1           0                        1
+## 190             0           0                        0
+## 202             1           0                        0
+## 225             0           0                        0
+## 284             0           0                        0
+## 305             1           0                        1
+## 324             1           0                        0
+##     plebiscitos._referendos_y_consultas pluralismo plurinacionalismo
+## 3                                     1          0                 0
+## 14                                    0          0                 0
+## 18                                    1          0                 0
+## 36                                    1          0                 1
+## 39                                    1          0                 0
+## 42                                    1          0                 0
+## 57                                    1          0                 0
+## 75                                    0          0                 0
+## 120                                   1          0                 0
+## 176                                   1          0                 0
+## 186                                   3          1                 0
+## 190                                   0          0                 0
+## 202                                   1          0                 0
+## 225                                   0          0                 0
+## 284                                   0          0                 0
+## 305                                   0          0                 0
+## 324                                   1          0                 0
+##     poder_judicial_.estructura_y_funciones. presidencia_de_la_republica
+## 3                                         1                           0
+## 14                                        0                           0
+## 18                                        0                           0
+## 36                                        0                           0
+## 39                                        1                           0
+## 42                                        0                           0
+## 57                                        0                           0
+## 75                                        0                           1
+## 120                                       1                           0
+## 176                                       0                           0
+## 186                                       1                           1
+## 190                                       0                           0
+## 202                                       0                           0
+## 225                                       0                           0
+## 284                                       1                           1
+## 305                                       1                           0
+## 324                                       0                           0
+##     privacidad_e_intimidad probidad proteccion_judicial_de_los_derechos
+## 3                        0        0                                   0
+## 14                       0        0                                   0
+## 18                       0        0                                   0
+## 36                       0        0                                   0
+## 39                       0        0                                   0
+## 42                       0        0                                   1
+## 57                       0        0                                   0
+## 75                       0        0                                   0
+## 120                      0        0                                   0
+## 176                      0        0                                   0
+## 186                      0        2                                   0
+## 190                      0        0                                   0
+## 202                      0        0                                   0
+## 225                      0        0                                   0
+## 284                      0        0                                   0
+## 305                      0        0                                   0
+## 324                      1        0                                   0
+##     proteccion._promocion_y_respeto_de_los_derechos_humanos_y_fundamentales
+## 3                                                                         1
+## 14                                                                        0
+## 18                                                                        0
+## 36                                                                        1
+## 39                                                                        1
+## 42                                                                        0
+## 57                                                                        1
+## 75                                                                        0
+## 120                                                                       1
+## 176                                                                       0
+## 186                                                                       3
+## 190                                                                       1
+## 202                                                                       1
+## 225                                                                       0
+## 284                                                                       0
+## 305                                                                       0
+## 324                                                                       1
+##     republica respeto respeto.conservacion_de_la_naturaleza_o_medio_ambiente
+## 3           0       1                                                      1
+## 14          0       0                                                      1
+## 18          0       0                                                      1
+## 36          0       0                                                      0
+## 39          0       1                                                      0
+## 42          0       1                                                      0
+## 57          0       0                                                      0
+## 75          0       0                                                      1
+## 120         0       0                                                      0
+## 176         0       0                                                      1
+## 186         0       0                                                      3
+## 190         0       0                                                      1
+## 202         0       1                                                      0
+## 225         0       1                                                      0
+## 284         0       0                                                      0
+## 305         0       0                                                      1
+## 324         0       1                                                      0
+##     respeto_a_la_naturaleza.medio_ambiente respeto_de_derechos_de_otros
+## 3                                        0                            1
+## 14                                       1                            1
+## 18                                       0                            0
+## 36                                       0                            0
+## 39                                       0                            1
+## 42                                       1                            1
+## 57                                       0                            0
+## 75                                       0                            1
+## 120                                      0                            1
+## 176                                      0                            2
+## 186                                      1                            2
+## 190                                      0                            0
+## 202                                      0                            1
+## 225                                      0                            1
+## 284                                      0                            1
+## 305                                      0                            0
+## 324                                      0                            1
+##     respeto_por_la_constitucion responsabilidad reunion_pacifica
+## 3                             0               0                0
+## 14                            1               0                0
+## 18                            1               1                0
+## 36                            1               0                0
+## 39                            0               1                0
+## 42                            0               0                0
+## 57                            0               0                0
+## 75                            1               0                0
+## 120                           1               1                0
+## 176                           0               0                0
+## 186                           3               1                0
+## 190                           1               1                0
+## 202                           1               0                0
+## 225                           0               0                0
+## 284                           1               0                0
+## 305                           1               1                0
+## 324                           0               0                0
+##     regimen_de_gobierno_presidencial.semi.presidencial.parlamentario seguridad
+## 3                                                                  0         0
+## 14                                                                 0         0
+## 18                                                                 0         0
+## 36                                                                 0         0
+## 39                                                                 0         1
+## 42                                                                 0         0
+## 57                                                                 0         0
+## 75                                                                 0         0
+## 120                                                                0         1
+## 176                                                                0         0
+## 186                                                                0         1
+## 190                                                                1         0
+## 202                                                                0         0
+## 225                                                                0         0
+## 284                                                                1         0
+## 305                                                                0         0
+## 324                                                                0         0
+##     ser_elegido_en_cargos_publicos servicio_a_la_comunidad soberania
+## 3                                0                       0         0
+## 14                               0                       0         0
+## 18                               1                       1         0
+## 36                               0                       0         0
+## 39                               0                       0         0
+## 42                               0                       1         0
+## 57                               0                       0         0
+## 75                               0                       0         0
+## 120                              1                       0         0
+## 176                              0                       0         0
+## 186                              0                       1         0
+## 190                              0                       0         0
+## 202                              0                       0         1
+## 225                              0                       0         0
+## 284                              1                       0         0
+## 305                              0                       0         0
+## 324                              0                       1         0
+##     solidaridad subsidiaridad tolerancia transparencia_y_publicidad unidad
+## 3             0             0          0                          0      0
+## 14            0             0          0                          0      0
+## 18            0             0          0                          0      0
+## 36            0             0          0                          0      0
+## 39            0             0          0                          1      0
+## 42            1             0          1                          0      0
+## 57            0             0          0                          1      0
+## 75            0             0          0                          0      0
+## 120           0             0          1                          1      0
+## 176           0             0          0                          0      0
+## 186           0             0          0                          0      0
+## 190           0             0          1                          0      0
+## 202           0             0          0                          0      0
+## 225           0             0          0                          0      0
+## 284           0             0          0                          0      0
+## 305           0             1          0                          0      0
+## 324           0             0          0                          0      0</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Liste las 10 localidades que más mencionaron el concepto <code>justicia</code>.</li>
 </ol>
-<pre class="r"><code># RESPUESTA</code></pre>
+<pre class="r"><code>#Primero ordenamos el vector de justicia de forma decreciente y filtramos el dataset con ese orden, seleccionando las 10 primeras filas/localidades.
+data_tf[order(data_tf$justicia, decreasing = TRUE),][1:10,]</code></pre>
+<pre><code>##                                            localidad a_huelga a_la_educacion
+## 276      Metropolitana de Santiago/Santiago/Santiago       37            385
+## 267   Metropolitana de Santiago/Santiago/Providencia       15            337
+## 278         Metropolitana de Santiago/Santiago/Nunoa       12            252
+## 259    Metropolitana de Santiago/Santiago/Las Condes        4            201
+## 237 Metropolitana de Santiago/Cordillera/Puente Alto        3             90
+## 327                 Valparaiso/Valparaiso/Valparaiso       22            162
+## 255    Metropolitana de Santiago/Santiago/La Florida       10            122
+## 328               Valparaiso/Valparaiso/Vina del Mar        8             98
+## 9                Antofagasta/Antofagasta/Antofagasta        3             69
+## 290                         Tarapaca/Iquique/Iquique        6             71
+##     a_la_honra._al_honor a_la_identidad_cultural a_la_informacion
+## 276                    2                      25               79
+## 267                    1                      13               48
+## 278                    4                      22               41
+## 259                    4                      11               32
+## 237                    4                       5                9
+## 327                    0                      12               25
+## 255                    0                       4               20
+## 328                    0                       2               16
+## 9                      1                       7               10
+## 290                    0                       3                5
+##     a_la_integracion_de_discapacidad a_la_integridad_fisica_y_psiquica
+## 276                               28                                57
+## 267                               13                                54
+## 278                               12                                52
+## 259                               11                                34
+## 237                               18                                 6
+## 327                               14                                13
+## 255                               13                                18
+## 328                                9                                 6
+## 9                                 10                                 5
+## 290                                9                                11
+##     a_la_nacionalidad a_la_participacion a_la_salud
+## 276                 3                123        376
+## 267                 8                 92        318
+## 278                 5                 73        233
+## 259                 2                 44        200
+## 237                 0                 14        102
+## 327                 2                 48        161
+## 255                 1                 39        124
+## 328                 1                 27        103
+## 9                   2                 12         77
+## 290                 2                 12         81
+##     a_la_seguridad.vida_sin_violencia a_la_seguridad_social a_la_vida
+## 276                                48                   171       119
+## 267                                42                   159       130
+## 278                                23                   124        72
+## 259                                46                    60       127
+## 237                                27                    31       136
+## 327                                20                    68        47
+## 255                                12                    49        50
+## 328                                18                    36        44
+## 9                                  18                    23        54
+## 290                                20                    25        39
+##     a_la_vivienda_digna a_sindicalizarse_y_a_la_negociacion_colectiva
+## 276                 162                                            92
+## 267                 111                                            38
+## 278                  99                                            36
+## 259                  62                                            18
+## 237                  63                                            18
+## 327                  79                                            43
+## 255                  49                                            31
+## 328                  43                                            23
+## 9                    31                                            12
+## 290                  45                                            18
+##     a_sufragio.votar acceso_a_informacion_publica acceso_a_la_cultura
+## 276               33                           15                  41
+## 267               32                           16                  38
+## 278               25                           11                  24
+## 259               24                            7                   9
+## 237               18                            9                   5
+## 327               26                            5                  10
+## 255               18                            2                  12
+## 328               15                            8                  11
+## 9                 17                            6                   5
+## 290               11                            1                   3
+##     al_salario_equitativo al_trabajo amistad_civica autonomia.libertad
+## 276                    86         72             15                145
+## 267                    46         38              7                149
+## 278                    48         44              6                 90
+## 259                    27         27              6                115
+## 237                    51         20              6                 96
+## 327                    48         40              4                 51
+## 255                    37         28              2                 30
+## 328                    32         19              9                 32
+## 9                      33         13              5                 14
+## 290                    27         17              1                 23
+##     bien_comun.comunidad cambio_o_reforma_constitucional ciudadania
+## 276                  270                             226         12
+## 267                  267                             187         16
+## 278                  179                             115          4
+## 259                  155                              86          4
+## 237                   49                              48          1
+## 327                  105                              84          4
+## 255                   79                              66          3
+## 328                   60                              48          1
+## 9                     52                              33          1
+## 290                   38                              31          2
+##     congreso_o_parlamento_.estructura_y_funciones.
+## 276                                            276
+## 267                                            254
+## 278                                            189
+## 259                                            177
+## 237                                            140
+## 327                                            111
+## 255                                             98
+## 328                                             69
+## 9                                               56
+## 290                                             49
+##     contraloria_general.tribunales_de_cuentas
+## 276                                       139
+## 267                                       124
+## 278                                        95
+## 259                                       104
+## 237                                       112
+## 327                                        58
+## 255                                        45
+## 328                                        50
+## 9                                          24
+## 290                                        29
+##     cumplimiento_de_las_leyes_y_normas cumplimiento_de_obligaciones_fiscales
+## 276                                232                                   144
+## 267                                198                                   162
+## 278                                130                                   114
+## 259                                167                                    82
+## 237                                131                                    24
+## 327                                100                                    43
+## 255                                 89                                    40
+## 328                                 73                                    27
+## 9                                   68                                    17
+## 290                                 73                                    19
+##     cumplimiento_de_tratados_y_obligaciones_internacionales
+## 276                                                     149
+## 267                                                     101
+## 278                                                      73
+## 259                                                      54
+## 237                                                      19
+## 327                                                      55
+## 255                                                      47
+## 328                                                      29
+## 9                                                        17
+## 290                                                      18
+##     de_los_pueblos_indigenas de_peticion_ante_las_autoridades de_propiedad
+## 276                       58                                5           29
+## 267                       54                                2           51
+## 278                       53                                5           17
+## 259                       20                                2           87
+## 237                        9                                2           61
+## 327                       43                                2           15
+## 255                       26                                0            7
+## 328                       26                                3            4
+## 9                         10                                0            4
+## 290                       10                                1            6
+##     de_proteccion_y_conservacion_de_patrimonio_historico_y_cultural
+## 276                                                             335
+## 267                                                             294
+## 278                                                             221
+## 259                                                             164
+## 237                                                              95
+## 327                                                             165
+## 255                                                             115
+## 328                                                              94
+## 9                                                                59
+## 290                                                              58
+##     de_satisfacer_cargas_publicas
+## 276                            39
+## 267                            40
+## 278                            24
+## 259                            26
+## 237                             8
+## 327                             9
+## 255                            14
+## 328                            11
+## 9                               4
+## 290                             5
+##     deberes_de_proteccion_de_conservacion_de_la_naturaleza
+## 276                                                    421
+## 267                                                    347
+## 278                                                    281
+## 259                                                    205
+## 237                                                     99
+## 327                                                    176
+## 255                                                    141
+## 328                                                    116
+## 9                                                       83
+## 290                                                     81
+##     defensor_del_pueblo.ciudadano democracia derecho_de_asociacion
+## 276                           295        284                    36
+## 267                           233        239                    15
+## 278                           191        164                    12
+## 259                           106        162                    15
+## 237                            73        141                     0
+## 327                           126        126                     2
+## 255                           101         92                     2
+## 328                            83         72                     5
+## 9                              58         51                    15
+## 290                            55         50                     3
+##     derechos_del_nino._nina_y_adolescente desarrollo descentralizacion dignidad
+## 276                                    85         38               198      158
+## 267                                    90         18               150      139
+## 278                                    71         11               118       77
+## 259                                    43         12               102       79
+## 237                                    18         15                49      102
+## 327                                    47         12                93       62
+## 255                                    33          8                53       35
+## 328                                    15          6                58       42
+## 9                                       8         10                67       36
+## 290                                    18          5                55       23
+##     diversidad division_territorial
+## 276         69                   34
+## 267         69                   38
+## 278         42                   20
+## 259         28                   13
+## 237          7                   10
+## 327         22                   17
+## 255         28                   17
+## 328         13                   17
+## 9            6                    6
+## 290          8                   11
+##     ejercicio_legitimo_y_no_abusivo_de_los_derechos emprendimiento_libre
+## 276                                             282                   10
+## 267                                             224                    3
+## 278                                             154                    1
+## 259                                             148                   15
+## 237                                              69                   16
+## 327                                             127                    0
+## 255                                              85                    2
+## 328                                              75                    1
+## 9                                                43                    2
+## 290                                              57                    3
+##     equidad_de_genero estado_de_derecho estado_de_excepcion estado_laico
+## 276               119               112                  25          151
+## 267                69                99                  28          145
+## 278                80                45                  21          127
+## 259                30                94                  20           78
+## 237                26               104                  14           20
+## 327                61                42                  12           72
+## 255                43                22                  10           34
+## 328                20                28                   5           34
+## 9                  24                29                   8           16
+## 290                32                22                   3           18
+##     forma_de_estado._federalismo.autonomias_regionales fuerzas_armadas
+## 276                                                186             184
+## 267                                                158             148
+## 278                                                119             120
+## 259                                                 77             115
+## 237                                                 27             105
+## 327                                                 77              79
+## 255                                                 46              65
+## 328                                                 52              50
+## 9                                                   39              26
+## 290                                                 41              27
+##     gobierno_local.municipal gobierno_nacional.estructura_y_funciones.
+## 276                      150                                        51
+## 267                      113                                        38
+## 278                       75                                        28
+## 259                       59                                        22
+## 237                       39                                        71
+## 327                       71                                        20
+## 255                       45                                        16
+## 328                       40                                        12
+## 9                         24                                        12
+## 290                       30                                         5
+##     gobierno_provincial gobierno_regional identidad_cultural igualdad
+## 276                  16               159                 32      388
+## 267                   8               135                 22      316
+## 278                   6               122                 15      239
+## 259                   8               101                  9      177
+## 237                  12                38                 11      138
+## 327                   9                78                 18      141
+## 255                   4                59                 11      125
+## 328                   8                49                  8       97
+## 9                     5                50                 11       62
+## 290                   7                52                  8       65
+##     igualdad_ante_la_ley igualdad_ante_las_cargas_publicas
+## 276                  173                                 2
+## 267                  157                                 0
+## 278                   93                                 1
+## 259                  124                                 0
+## 237                  114                                 1
+## 327                   73                                 1
+## 255                   57                                 0
+## 328                   56                                 4
+## 9                     56                                 0
+## 290                   48                                 1
+##     igualdad_ante_los_tributos igualdad_de_acceso_a_la_justicia.debido_proceso
+## 276                          3                                              37
+## 267                          0                                              41
+## 278                          8                                              34
+## 259                          1                                              31
+## 237                          2                                              13
+## 327                          3                                              12
+## 255                          5                                              13
+## 328                          1                                               7
+## 9                            3                                               8
+## 290                          3                                               5
+##     igualdad_de_genero inclusion innovacion.creatividad integracion
+## 276                 74        85                     14          27
+## 267                 60        78                     17          15
+## 278                 47        55                     10           9
+## 259                 26        45                      8           9
+## 237                 16        16                      4           5
+## 327                 32        43                      8           7
+## 255                 12        24                      4           6
+## 328                 12        23                      5           6
+## 9                   12        19                      8           3
+## 290                 11        13                      5           6
+##     jefatura_de_gobierno juicio_politico_.acusacion_constitucional justicia
+## 276                   16                                        76      230
+## 267                    3                                        53      165
+## 278                    6                                        35      145
+## 259                    8                                        34      132
+## 237                    5                                        85      130
+## 327                    4                                        31      105
+## 255                    3                                        36      103
+## 328                    3                                        28       80
+## 9                      5                                        31       72
+## 290                    3                                        20       72
+##     justicia_constitucional justicia_electoral libertad_ambulatoria
+## 276                      79                 33                    1
+## 267                      63                 17                    1
+## 278                      38                 14                    0
+## 259                      54                 15                    0
+## 237                      29                 11                   30
+## 327                      30                 15                    0
+## 255                      25                 18                    1
+## 328                      20                 21                    1
+## 9                        13                  9                    2
+## 290                       9                  9                    2
+##     libertad_de_conciencia libertad_de_ensenanza libertad_de_expresion
+## 276                     42                    27                   140
+## 267                     36                    19                   121
+## 278                     25                     3                    84
+## 259                     24                    40                    86
+## 237                     59                    71                    91
+## 327                     17                     4                    64
+## 255                     17                    10                    43
+## 328                     10                     8                    48
+## 9                       22                    22                    29
+## 290                      7                     8                    23
+##     libertad_de_trabajo libertad_personal
+## 276                   8                50
+## 267                   2                62
+## 278                   0                32
+## 259                   9                59
+## 237                   6                42
+## 327                   4                14
+## 255                   8                13
+## 328                   7                12
+## 9                     2                10
+## 290                   2                 7
+##     libre_iniciativa_economica_._libre_empresa
+## 276                                         12
+## 267                                         13
+## 278                                          6
+## 259                                         31
+## 237                                          9
+## 327                                          8
+## 255                                          3
+## 328                                          1
+## 9                                            1
+## 290                                          1
+##     ministerio_publico._defensoria_publica multiculturalidad no_discriminacion
+## 276                                     73                78                84
+## 267                                     56                64                61
+## 278                                     40                52                49
+## 259                                     46                38                34
+## 237                                     22                14                28
+## 327                                     26                32                22
+## 255                                     16                18                13
+## 328                                     21                13                19
+## 9                                       12                 6                 8
+## 290                                     25                10                14
+##     participacion patriotismo paz.convivencia_pacifica
+## 276           106           2                       15
+## 267            63           3                       18
+## 278            62           2                       13
+## 259            34           2                       21
+## 237            26           3                       14
+## 327            44           3                       11
+## 255            40           2                        6
+## 328            18           3                       11
+## 9              11           0                        9
+## 290            20           2                        4
+##     plebiscitos._referendos_y_consultas pluralismo plurinacionalismo
+## 276                                 415         23                74
+## 267                                 358         12                37
+## 278                                 282         16                31
+## 259                                 180          6                 7
+## 237                                  91          1                12
+## 327                                 182          5                42
+## 255                                 129          4                21
+## 328                                 109          4                25
+## 9                                    82          2                 6
+## 290                                  68          5                11
+##     poder_judicial_.estructura_y_funciones. presidencia_de_la_republica
+## 276                                     213                          90
+## 267                                     171                          67
+## 278                                     118                          54
+## 259                                     137                          57
+## 237                                     128                          93
+## 327                                      74                          42
+## 255                                      63                          48
+## 328                                      54                          31
+## 9                                        59                          49
+## 290                                      34                          39
+##     privacidad_e_intimidad probidad proteccion_judicial_de_los_derechos
+## 276                     17       55                                  43
+## 267                     15       45                                  34
+## 278                      7       44                                  25
+## 259                     29       34                                  16
+## 237                      4       20                                  21
+## 327                      7       32                                  20
+## 255                      6       18                                  19
+## 328                      7       21                                  13
+## 9                       18       40                                   7
+## 290                      3       16                                   6
+##     proteccion._promocion_y_respeto_de_los_derechos_humanos_y_fundamentales
+## 276                                                                     464
+## 267                                                                     394
+## 278                                                                     306
+## 259                                                                     229
+## 237                                                                     158
+## 327                                                                     192
+## 255                                                                     149
+## 328                                                                     119
+## 9                                                                        92
+## 290                                                                      88
+##     republica respeto respeto.conservacion_de_la_naturaleza_o_medio_ambiente
+## 276        11     126                                                    274
+## 267        10     118                                                    215
+## 278         4      71                                                    209
+## 259         9      84                                                    115
+## 237         3      64                                                     60
+## 327        11      60                                                    110
+## 255         5      51                                                    108
+## 328         4      47                                                     79
+## 9          17      25                                                     50
+## 290         1      34                                                     55
+##     respeto_a_la_naturaleza.medio_ambiente respeto_de_derechos_de_otros
+## 276                                    116                          311
+## 267                                     97                          253
+## 278                                     61                          218
+## 259                                     38                          179
+## 237                                     35                          140
+## 327                                     55                          126
+## 255                                     50                           85
+## 328                                     40                           93
+## 9                                       21                           59
+## 290                                     25                           61
+##     respeto_por_la_constitucion responsabilidad reunion_pacifica
+## 276                         303             167                2
+## 267                         232             142                3
+## 278                         187              96                1
+## 259                         155             110                3
+## 237                         156             125                0
+## 327                         130              73                2
+## 255                         111              56                1
+## 328                          84              44                2
+## 9                            80              51               16
+## 290                          65              53                2
+##     regimen_de_gobierno_presidencial.semi.presidencial.parlamentario seguridad
+## 276                                                              215        38
+## 267                                                              210        18
+## 278                                                              159        10
+## 259                                                              143        24
+## 237                                                               40        31
+## 327                                                               71        18
+## 255                                                               49        20
+## 328                                                               50        15
+## 9                                                                 32        17
+## 290                                                               30        18
+##     ser_elegido_en_cargos_publicos servicio_a_la_comunidad soberania
+## 276                              7                     221        41
+## 267                              4                     141        16
+## 278                              2                     106        17
+## 259                              0                      85        13
+## 237                              2                     125        64
+## 327                              4                      98        16
+## 255                              5                      77        13
+## 328                              1                      60        14
+## 9                                1                      62         8
+## 290                              4                      40        11
+##     solidaridad subsidiaridad tolerancia transparencia_y_publicidad unidad
+## 276         117            16         36                         50      5
+## 267          78            17         24                         35      1
+## 278          80             9         13                         20      0
+## 259          54            40          6                         26      1
+## 237          20            32         18                         25      8
+## 327          45             5         17                         14      4
+## 255          35             7         14                         18      1
+## 328          29             2         15                         11      2
+## 9            11             3          9                         20      4
+## 290          17             3          4                         17      0</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>Liste los 10 conceptos menos mencionados a lo largo de todo el proceso.</li>
 </ol>
-<pre class="r"><code># RESPUESTA</code></pre>
+<pre class="r"><code>#Sumamos todas las columnas excepto la primera que no es numérica, y luego ordenamos
+sort(colSums(data_tf[,-1]))[1:10]</code></pre>
+<pre><code>## igualdad_ante_las_cargas_publicas              libertad_ambulatoria 
+##                                31                                56 
+##              a_la_honra._al_honor                  reunion_pacifica 
+##                                64                                65 
+##  de_peticion_ante_las_autoridades                       patriotismo 
+##                                67                               101 
+##        igualdad_ante_los_tributos                            unidad 
+##                               111                               123 
+##                 a_la_nacionalidad    ser_elegido_en_cargos_publicos 
+##                               129                               159</code></pre>
 <ol start="4" style="list-style-type: decimal">
-<li>Liste las 10 localidades que más participaron en el proceso. Describa cómo definió su medida de participación.</li>
-</ol>
-<pre class="r"><code># RESPUESTA</code></pre>
-<ol start="5" style="list-style-type: decimal">
-<li>Ejecute el siguiente código que permitirá agregar una nueva columna a nuestro dataframe que solo tendrá el nombre de la región.</li>
+<li><p>Liste las 10 localidades que más participaron en el proceso. Describa cómo definió su medida de participación.</p></li>
+<li><p>Ejecute el siguiente código que permitirá agregar una nueva columna a nuestro dataframe que solo tendrá el nombre de la región.</p></li>
 </ol>
 <pre class="r"><code>library(dplyr)
 regiones &lt;- strsplit(as.character(data_tf[,1]), &#39;/&#39;)
@@ -519,7 +1945,12 @@ data_tf &lt;- data_tf %&gt;% select(localidad, region, everything())</code></pre
 <li><code>Metropolitana de Santiago</code></li>
 </ul>
 <p>Cabe resaltar, que se esperan tres gráficos de barras para las tres diferentes regiones:</p>
-<pre class="r"><code># 10 conceptos más mencionados en Atacama</code></pre>
+<pre class="r"><code>library(ggplot2)
+
+ggplot(data_tf, aes(region, justicia)) +
+  geom_bar(data = subset(data_tf, region==&quot;Atacama&quot;), stat=&quot;identity&quot;) </code></pre>
+<p><img src="data:image/png;base64,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" width="672" /></p>
+<pre class="r"><code>  # 10 conceptos más mencionados en Atacama</code></pre>
 <pre class="r"><code># 10 conceptos más mencionados en Coquimbo</code></pre>
 <pre class="r"><code># 10 conceptos más mencionados en Metropolitana de Santiago</code></pre>
 <ol start="6" style="list-style-type: decimal">
@@ -547,7 +1978,11 @@ head(tipos)</code></pre>
 <li>Filtre los datos para incluir sólo los accidentes ocurridos el año 2011 a nivel regional. Genere un boxplot donde se indique la cantidad de accidentes categorizado por tipo de accidente.</li>
 </ol>
 <p>Este tipo de gráfico nos ayudará a entender como se distribuye los datos por cada tipo de accidentes. Es decir, podremos apreciar que tan dispersos o similares son los datos en todo el dataset. También, puede ser útil para observar valores atípicos u outliers en los datos.</p>
-<pre class="r"><code># RESPUESTA</code></pre>
+<pre class="r"><code>#Filtramos por año y regional
+filtro_tipos &lt;- tipos[tipos$Muestra==&quot;Regional&quot; &amp; tipos$Anio == 2011,]
+
+plot(filtro_tipos$TipoAccidente, filtro_tipos$Cantidad,xlab = &quot;Tipo de accidente&quot;, ylab = &quot;Cantidad&quot;, main=&quot;Cantidad de accidentes por tipo de accidente&quot;)</code></pre>
+<p><img src="data:image/png;base64,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" width="672" /></p>
 <ol start="2" style="list-style-type: decimal">
 <li>¿Qué aprecia con el gráfico anterior? ¿Qué otra forma de explorar los datos podría agregar? ¿Qué información adicional aporta? Adjunte una breve explicación.</li>
 </ol>
