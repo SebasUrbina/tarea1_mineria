@@ -32,7 +32,6 @@ La primera parte de esta actividad son preguntas teóricas que avanzaron en las 
 *1. ¿Cuál es el objetivo de Minería de datos y qué la diferencia de Machine Learning? De un ejemplo.*
 
 **Respuesta:** 
-
 El objectivo de la Minería de Datos principalmente es obtener conocimiento a partir de grande volumenes de datos, de forma automática, no manual, pues nos tomaría años procesar tanta informacion. Asimismo, con esta información agilizar y mejorar la toma de desiciones.
 
 Con respecto a la diferencia de Minería de Datos con Machine Learning, el ML se encarga de generar predicciones a partir de datos o específicamente conjuntos de entrenamientos, tecnicamente se entrenan algoritmos en base a grandes cantidades de datos para predecir compartamiento similar a humanos, mientras que la minería de datos nos permite obtener conclusiones o información útil a través de los datos, como puede ser patrones de comportamiento y relaciones entre variables, etc. A modo de ejemplo, podemos utilizar un algoritmo en base a Machile Learning para *predecir* si mañana va a llover, en contraste a Minería de Datos podemos obtener alguna información interesante sobre el clima, como por ejemplo que este año ha llovido más con respecto a años anterior, que el agua caída en cierta región x ha aumentado en los últimos años, etc.
@@ -41,7 +40,6 @@ Con respecto a la diferencia de Minería de Datos con Machine Learning, el ML se
 *2. Describa y compare los siguientes métodos usados en Minería de datos: clasificación vs. clustering.*
 
 **Respuesta:**
-
 Clasificación: Corresponde a un tipo de método predictivo o de aprendizaje supervisado, que utiliza variables para predecedir valores futuros o otras variables desconocidas. Se necesita un set de entrenamiento con las respectivas variables y la clase para cada instancia, de tal forma que si tenemos datos de imágenes de gatos y queremos crear un clasificador de imágenes de gatos(si es gato o no) el set de entrenamiento debe estar previamente etiquetado o las clases definidas, de esta forma el modelo aprende y es posible que pueda identificar/clasificar una nueva imagen, prediciendo si es gato o no.
 
 Clustering: Corresponde a un tipo de método descriptivo o de aprendizaje no supervisado, que permite encontrar patrones en ciertos conjuntos de datos, agrupar datos automaticamente por carácteristicas comunes encontradas por el algoritmo, etc. El objetivo del algoritmo es encontrar, si es que existen, patrones en base a los atributos de los datos.
@@ -51,7 +49,6 @@ Una de las principales diferencias de estos métodos, es que clasificación requ
 *3. ¿Qué desafios existen en Minería de datos?*
 
 **Respuesta:**
-
 Los desafios se dividen en distintos conceptos:
 
 - Escalabilidad: Se refiere principalmente a que los modelos funcionen a gran escala, es decir, con grandes cantidades de datos.
@@ -73,14 +70,12 @@ Bajo todos los pilares mencionados anteriormente repercuten los desafios de la m
 *4. Respecto a los tipos de atributo, ¿cuál es la diferencia entre razón e intervalo?*
 
 **Respuesta:**
-
 Ambos definen datos cuantitativos (medidas estimables), se diferencian principalmente en que los datos de tipo intervalo no poseen un cero absoluto, mientras que lo de razon si. Es por esto que los datos de tipo intervalo no pueden ser operados con la multiplicacion ni con la division (su cero es arbitrario). Algunos ejemplos de datos intervalo son las fechas o temperaturas en °C o °F, y de datos de tipo razon el largo, la hora o la temperatura en K (la escala Kelvin si tiene una 0 absoluto).
 
 
 *5. ¿Qué factores que ocasionan errores en el análisis de datos deben ser considerados para la limpieza de un set de datos?*
 
 **Respuesta:** POR COMPLETAR.
-
 - Ruido:
 - Outliers:
 - Valores faltantes:
@@ -90,9 +85,11 @@ Ambos definen datos cuantitativos (medidas estimables), se diferencian principal
 
 *6. ¿Qué es el análisis exploratorio de datos o EDA?*
 
-**Respuesta:** FALTA DESARROLLAR.
+**Respuesta:**
+Es un conjunto de tecnicas definidas por Jhon W. Tukey, utilizadas para analizar y comprender de manera rapida la naturaleza de un dataset. Se basa principalmente en 2 criterios: Las estadisticas de resumen y la visualizacion de datos.
+Las estadisticas de resumen son indicadores que explican propiedades de los datos (dada la gran cantidad de instancias de un dataset, para un ser humano es imposible entender lo que esta pasando solo mirando los datos), tales como: frecuencias, medidas de tendencia central, dispersion, etc.
+La visualizacion de datos es la representacion grafica de un dataset, que al utilizar elementos visuales como cuadros, graficos y mapas, permite identificar las caracteristicas y relaciones entre elementos (le permite a las persona reconocer patrones o tendencias en base a su criterio o expertiz que tengan en el dominio particular).
 
-Es un conjunto de tecnicas utilizadas para comprender de manera rapida la naturaleza de un dataset. Se basa principalmente en 2 criterios: Las estadisticas de resumen y la visualizacion de datos.
 
 *7. Describa las medidas de tendencia central: media y mediana. Exponga la diferencia entre ambas.*
 
@@ -108,14 +105,17 @@ Una matriz de correlación permite visualizar qué tan relacionadas están relac
 
 *9. Explique cómo se construye un Boxplot y exponga cómo se identifican los valores atípicos u outliers en este tipo de gráfico.*
 
-**Respuesta:** FALTA DESARROLLAR.
+**Respuesta:**
+Un boxplot se construye a partir de los percentiles: 
+  - Contiene un rectangulo construido en base al 1er y 3er Cuartil (Percentiles 25 y 75), de altura igual a IQR.
+  - Al rectangulo lo divide horizontalmente una linea, correspondiente a la mediana (Percentil 50 o Q2)
+  - A partir de cada extremo del rectangulo (superior e inferior) nace una recta o brazo de un determinado largo: El brazo inferior es de largo Li= Q1 - 1.5IQR, y el superior Ls= Q3 + 1.5IQR.
+  - Se definen los valores mas extremos que el largo de cada brazo como atipicos u outliers.
+El largo de los brazos y el criterio para identificar outliers se basa en el comportamiento de una distribucion normal, como tal si la mediana no esta en el centro del rectangulo, su distribucion no es simetrica.
 
-Un boxplot se construye a partir de los percentiles:
-  - Contiene un rectangulo construido en base al 1er y 3er Cuartil (Percentiles 25 y 75) -> su altura es RIC (Q3-Q1).
-  - Al rectangulo lo divide horizontalmente una linea, correspondiente a la mediana (Percentil 50 o 2do Cuartil)
-  - A partir de cada extremo del rectangulo (superior e inferior) nace una recta o brazo de un determinado largo: El brazo inferior es de largo Li= Q1 - 1.5RIC, y el superior Ls= Q3 + 1.5RIC.
-  - Se definen los valores fuera de los brazos (mas externos) como atipicos u outliers.
-El largo de los brazos y el criterio para identificar outliers se basa en el comportamiento de una distribucion normal.
+* Qi: i-esimo Cuartil
+* IQR (rango inter-cuartil): Q3-Q1
+
 
 
 ## Práctica 
