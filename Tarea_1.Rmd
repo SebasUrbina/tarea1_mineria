@@ -116,6 +116,7 @@ Un boxplot se construye a partir de los percentiles:
   - Al rectangulo lo divide horizontalmente una linea, correspondiente a la mediana (Percentil 50 o 2do Cuartil)
   - A partir de cada extremo del rectangulo (superior e inferior) nace una recta o brazo de un determinado largo: El brazo inferior es de largo Li= Q1 - 1.5RIC, y el superior Ls= Q3 + 1.5RIC.
   - Se definen los valores fuera de los brazos (mas externos) como atipicos u outliers.
+El largo de los brazos y el criterio para identificar outliers se basa en el comportamiento de una distribucion normal.
 
 
 ## Práctica 
@@ -193,7 +194,12 @@ sort(colSums(data_tf[,-1]))[1:10]
 
 
 ```{r}
+# Definimos la medida de participacion como la cantidad total registrada de todos los conceptos mencionados en cada localidad
+c<-rowSums(data_tf[,-1])
+names(c)<-data_tf$localidad
+sort(c,decreasing = TRUE)[1:10]
 
+# Enlistamos la suma de todos los conceptos hablados por localidad, los relacionamos con su localidad respectiva, ordenamos decrecientemente y seleccionamos las mejores 10
 ```
 
 5. Ejecute el siguiente código que permitirá agregar una nueva columna a nuestro dataframe que solo tendrá el nombre de la región.
@@ -217,7 +223,7 @@ Cabe resaltar, que se esperan tres gráficos de barras para las tres diferentes 
 ```{r}
 library(ggplot2)
 
-ggplot(data_tf, aes(region, justicia)) +
+ggplot(data_tf, aes(region, localidad)) +
   geom_bar(data = subset(data_tf, region=="Atacama"), stat="identity") 
 
   # 10 conceptos más mencionados en Atacama
@@ -244,7 +250,7 @@ ggplot(data_tf, aes(region, justicia)) +
 Para esta sección utilizaremos un dataset real de número de accidentes de tránsito por localidad, el cual puede ser encontrado en el siguiente link: http://datos.gob.cl/dataset/9348. Para cargar el dataset ejecute el siguiente código:
 
 ```{r}
-tipos <- read.table("https://users.dcc.uchile.cl/~hsarmien/mineria/datasets/accidentes_2010_2011.txt")
+tipos <- read.table("https://users.dcc.uchile.cl/~hsarmien/mineria/datasets/accidentes_2010_2011.txt",encoding = "UTF-8", as.is = FALSE)
 head(tipos)
 ```
 
@@ -265,6 +271,7 @@ plot(filtro_tipos$TipoAccidente, filtro_tipos$Cantidad,xlab = "Tipo de accidente
 
 **Respuesta:**
 
+
 ### Diamantes
 
 Considere el set de datos diamonds del paquete ggplot2 de R, que contiene los precios en dolares, junto con otros atributos importantes: quilates, corte, color y claridad. También hay medidas físicas como ser: x (largo), y (ancho), z (profundidad), depth (porcentaje total de profundidad) y table (ancho desde el tope del diamante al punto relativo más ancho del diamante):
@@ -279,10 +286,17 @@ Realice una exploración por el set de datos para responder las siguientes pregu
 
 1. Teniendo en cuenta las medidas físicas, ¿considera que existen valores inexistentes o inconsistentes? Describa como manejaría esta situación. Adjunte el código necesario.
 
+*Revisar*
+
 ```{r}
 # RESPUESTA
-```
+boxplot(diamonds[,c(5,6,8,9,10)], main="Inconsistencias en medidas fisicas")
+colSums(is.na(diamonds[,c(5,6,8,9,10)]))
 
+```
+  R: Dado los resultados expuestos, dentro de las medidas fisicas no existen valores inexistentes (la suma de los na por columna es 0), pero si valores inconsistentes u outliers (Representados en los puntos alejados del boxplot para cada atributo). Dado la pequeña cantidad de outliers estos pueden ser perfectamente "recortados" manteniendo la representatividad del dataset.
+  
+  
 2. Considerando la relación entre dos atributos, ¿qué atributos están más correlacionadas con el precio (price) y qué significa esto? ¿cuál es la correlación más alta para table? Adjunte el código necesario para la respuesta.
 
 ```{r}
