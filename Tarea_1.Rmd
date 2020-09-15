@@ -96,14 +96,14 @@ Es un conjunto de tecnicas utilizadas para comprender de manera rapida la natura
 
 *7. Describa las medidas de tendencia central: media y mediana. Exponga la diferencia entre ambas.*
 
-**Respuesta: La media corresponde al promedio aritmético entre los valores de un conjunto numérico, este valor se obtiene mediante la suma de todos los valores del conjunto a analizar dividido por el largo de el conjunto seleccionado. Por otro lado, la mediana corresponde al valor que se encuentra en la mitad de un conjunto de datos ordenados, es decir, la mitad de los valores del conjunto de datos es mayor o menor que la mediana del conjunto. La diferencia entre la mediana y la media es que esta primera variable está relacionada con la posición que tiene el valor en un set de valores, por otro lado, la media es una forma simple de decir a qué se parecen en promedio los datos del conjunto.**
-- Media:
-- Mediana:
+**Respuesta:**
+La media corresponde al promedio aritmético entre los valores de un conjunto numérico, este valor se obtiene mediante la suma de todos los valores del conjunto a analizar dividido por el largo de el conjunto seleccionado. Por otro lado, la mediana corresponde al valor que se encuentra en la mitad de un conjunto de datos ordenados, es decir, la mitad de los valores del conjunto de datos es mayor o menor que la mediana del conjunto. La diferencia entre la mediana y la media es que esta primera variable está relacionada con la posición que tiene el valor en un set de valores, por otro lado, la media es una forma simple de decir a qué se parecen en promedio los datos del conjunto.
 
 
 *8. ¿Qué es una matriz de correlación y para qué sirve?*
 
-**Respuesta:Una matriz de correlación permite visualizar qué tan relacionadas están relacionadas las varibales de un conjunto de estas. Estas matrices se pueden representar de diferentes formas, desde su forma más simple, una matriz cuadrada con diagonal igual a 1, hasta ser representadas mediantes formas más gráficas, utilizando colores o formas que indican el grado de relación entre una variable y otra. Usualmente, los valores de una matriz de correlación fluctúan entre 0 y 1, en donde, mientras más cercano a uno sea el valor asociado a las dos variables analizadas, más correlacionadas estarán estas. Además, en general para el cálculo de los coeficientes de correlación de la matriz se utiliza el método de pearson. Esta matriz de correlación además de ser útil para ver el nivel de relación entre variables, puede ser utilizada para disernir entre qué variables escoger para un modelo de regresión lineal o de regresión logística.**
+**Respuesta:**
+Una matriz de correlación permite visualizar qué tan relacionadas están relacionadas las varibales de un conjunto de estas. Estas matrices se pueden representar de diferentes formas, desde su forma más simple, una matriz cuadrada con diagonal igual a 1, hasta ser representadas mediantes formas más gráficas, utilizando colores o formas que indican el grado de relación entre una variable y otra. Usualmente, los valores de una matriz de correlación fluctúan entre 0 y 1, en donde, mientras más cercano a uno sea el valor asociado a las dos variables analizadas, más correlacionadas estarán estas. Además, en general para el cálculo de los coeficientes de correlación de la matriz se utiliza el método de pearson. Esta matriz de correlación además de ser útil para ver el nivel de relación entre variables, puede ser utilizada para disernir entre qué variables escoger para un modelo de regresión lineal o de regresión logística.
 
 
 *9. Explique cómo se construye un Boxplot y exponga cómo se identifican los valores atípicos u outliers en este tipo de gráfico.*
