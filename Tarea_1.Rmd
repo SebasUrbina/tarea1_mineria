@@ -74,7 +74,7 @@ Bajo todos los pilares mencionados anteriormente repercuten los desafios de la m
 
 **Respuesta:**
 
-Ambos definen datos cuantitativos (medidas estimables), se diferencian principalmente en que los datos de tipo intervalo no poseen un cero absoluto, mientras que lo de razon, si. Es por esto que los datos de tipo intervalo no pueden ser operados con la multiplicacion ni con la division (su cero es arbitrario). Algunos ejemplos de datos intervalo son las fechas o temperaturas en °C o °F, y de datos de tipo razon el largo, la hora o la temperatura en K (la escala Kelvin si tiene una 0 absoluto).
+Ambos definen datos cuantitativos (medidas estimables), se diferencian principalmente en que los datos de tipo intervalo no poseen un cero absoluto, mientras que lo de razon si. Es por esto que los datos de tipo intervalo no pueden ser operados con la multiplicacion ni con la division (su cero es arbitrario). Algunos ejemplos de datos intervalo son las fechas o temperaturas en °C o °F, y de datos de tipo razon el largo, la hora o la temperatura en K (la escala Kelvin si tiene una 0 absoluto).
 
 
 *5. ¿Qué factores que ocasionan errores en el análisis de datos deben ser considerados para la limpieza de un set de datos?*
