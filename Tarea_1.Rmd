@@ -127,7 +127,7 @@ Los datos con los que trabajarán consisten en la cantidad de veces que cada con
 Para cargar los datos, use:
 
 ```{r}
-data_tf <- read.csv("http://dcc.uchile.cl/~hsarmien/mineria/datasets/actas.txt", header = T)
+data_tf <- read.csv("http://dcc.uchile.cl/~hsarmien/mineria/datasets/actas.txt", encoding = "UTF-8", as.is = FALSE, header = T)
 ```
 
 **Por cada pregunta adjunte el código R que utilizó para llegar a la respuesta. Respuestas sin código no recibirán puntaje**
