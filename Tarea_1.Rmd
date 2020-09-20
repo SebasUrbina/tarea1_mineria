@@ -168,14 +168,14 @@ head(colnames(data_tf))
 1. Liste todas las localidades donde *no* se discutió el concepto `a_la_salud`. 
 
 ```{r}
-data_tf[data_tf$a_la_salud == 0,]
+data_tf[data_tf$a_la_salud == 0,]$localidad
 ```
 
 2. Liste las 10 localidades que más mencionaron el concepto `justicia`. 
 
 ```{r}
 #Primero ordenamos el vector de justicia de forma decreciente y filtramos el dataset con ese orden, seleccionando las 10 primeras filas/localidades.
-data_tf[order(data_tf$justicia, decreasing = TRUE),][1:10,]
+data_tf[order(data_tf$justicia, decreasing = TRUE),][1:10,]$localidad
 ```
 
 
@@ -262,13 +262,14 @@ Este tipo de gráfico nos ayudará a entender como se distribuye los datos por c
 ```{r}
 #Filtramos por año y regional
 filtro_tipos <- tipos[tipos$Muestra=="Regional" & tipos$Anio == 2011,]
-
-plot(filtro_tipos$TipoAccidente, filtro_tipos$Cantidad,xlab = "Tipo de accidente", ylab = "Cantidad", main="Cantidad de accidentes por tipo de accidente")
+#Hacemos el boxplot
+plot(filtro_tipos$TipoAccidente, filtro_tipos$Cantidad,xlab = "Tipo de accidente", ylab = "Cantidad", main="Cantidad de accidentes por tipo de accidente en el año 2011")
 ```
 
 2. ¿Qué aprecia con el gráfico anterior? ¿Qué otra forma de explorar los datos podría agregar? ¿Qué información adicional aporta? Adjunte una breve explicación.
 
 **Respuesta:**
+
 
 
 ### Diamantes
@@ -299,8 +300,12 @@ colSums(is.na(diamonds[,c(5,6,8,9,10)]))
 2. Considerando la relación entre dos atributos, ¿qué atributos están más correlacionadas con el precio (price) y qué significa esto? ¿cuál es la correlación más alta para table? Adjunte el código necesario para la respuesta.
 
 ```{r}
-# RESPUESTA
+#RESPUESTA
+cor(diamonds[,-c(2,3,4)])
 ```
+R: Se puede notar que el precio está bastante correlacionado positivamente con los atributos físicos(carat(peso),x,y,z) de los diamantes, pues posee valores muy cercanos a 1, lo cual tiene bastante sentido, ya que un diamante más grande tendrá mayor valor.
+
+La correlación más alta para table corresponde al largo(x) del diamante, con un valor de 0.1953, lo que corresponde a una correlación positiva.
 
 3. Proponga otra forma para explorar los datos. ¿Qué información adicional aporta? Adjunte una breve explicación.
 
