@@ -32,7 +32,7 @@ La primera parte de esta actividad son preguntas teóricas que avanzaron en las 
 *1. ¿Cuál es el objetivo de Minería de datos y qué la diferencia de Machine Learning? De un ejemplo.*
 
 **Respuesta:** 
-El objectivo de la Minería de Datos principalmente es obtener conocimiento a partir de grande volumenes de datos, de forma automática, no manual, pues nos tomaría años procesar tanta informacion. Asimismo, con esta información agilizar y mejorar la toma de desiciones.
+El objetivo de la Minería de Datos principalmente es obtener conocimiento a partir de grande volumenes de datos, de forma automática, no manual, pues nos tomaría años procesar tanta informacion. Asimismo, con esta información agilizar y mejorar la toma de desiciones.
 
 Con respecto a la diferencia de Minería de Datos con Machine Learning, el ML se encarga de generar predicciones a partir de datos o específicamente conjuntos de entrenamientos, tecnicamente se entrenan algoritmos en base a grandes cantidades de datos para predecir compartamiento similar a humanos, mientras que la minería de datos nos permite obtener conclusiones o información útil a través de los datos, como puede ser patrones de comportamiento y relaciones entre variables, etc. A modo de ejemplo, podemos utilizar un algoritmo en base a Machile Learning para *predecir* si mañana va a llover, en contraste a Minería de Datos podemos obtener alguna información interesante sobre el clima, como por ejemplo que este año ha llovido más con respecto a años anterior, que el agua caída en cierta región x ha aumentado en los últimos años, etc.
 
@@ -268,8 +268,11 @@ plot(filtro_tipos$TipoAccidente, filtro_tipos$Cantidad,xlab = "Tipo de accidente
 
 2. ¿Qué aprecia con el gráfico anterior? ¿Qué otra forma de explorar los datos podría agregar? ¿Qué información adicional aporta? Adjunte una breve explicación.
 
-**Respuesta:**
+**Respuesta:** *Revisar*
 
+Se puede observar que los accidentes por colisión presentan la mayor variabilidad por región. También se tiene valores outliers que distorsionan el boxplot. Asimismo se puede notar que los accidentes por Caida y Otros presentan muy poca variabilidad y su mediana es menor respecto a los otros tipos de accidentes.
+
+Se podría realizar un histograma de accidentes por región diferenciados en el tipo de accidente, para tener una mejor idea sobre cuál fue la región con más accidentes y de qué tipo. También se podrían listar las comunas con más y menos accidentes y realizar boxplot y encontrar diferencias. Esto nos ayudaría a comprender en qué región/comuna se produjo la mayor/menor cantidad de accidentes y de qué tipo, y de esta forma direccionar y enfocar políticas que busquen reducir los accidentes.
 
 
 ### Diamantes
