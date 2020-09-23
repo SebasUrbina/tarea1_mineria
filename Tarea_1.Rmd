@@ -227,9 +227,8 @@ Cabe resaltar, que se esperan tres gráficos de barras para las tres diferentes 
 
 ```{r}
 atacama <- data_tf %>% filter(region=='Atacama')
-atacama$suma <- sum(atacama[,-c(1,2)])
-columnas <- colSums(atacama[,-c(1,2)])
-atacama_2 <- data.frame(concepto=names(atacama[,-c(1,2)]), suma=columnas)
+columnas_1 <- colSums(atacama[,-c(1,2)])
+atacama_2 <- data.frame(concepto=names(atacama[,-c(1,2)]), suma=columnas_1)
 atacama_2 <- atacama_2 %>% arrange(-suma)
 atacama_2 <- atacama_2[1:10,]
 
@@ -238,7 +237,8 @@ library(ggplot2)
 ggplot(atacama_2, aes(x = reorder(concepto, suma), y = suma)) +
           geom_bar(stat = "identity") + 
           coord_flip()+
-          ggtitle(label = "Top-20 palabras de la colección")
+          ggtitle(label = "Top-10 palabras de la colección Atacama")+
+          labs(x="Frecuencia", y="Concepto")
 
 
   # 10 conceptos más mencionados en Atacama
@@ -246,10 +246,38 @@ ggplot(atacama_2, aes(x = reorder(concepto, suma), y = suma)) +
 
 ```{r}
 # 10 conceptos más mencionados en Coquimbo
+coquimbo <- data_tf %>% filter(region=='Coquimbo')
+columnas_2 <- colSums(coquimbo[,-c(1,2)])
+coquimbo_2 <- data.frame(concepto=names(coquimbo[,-c(1,2)]), suma=columnas_2)
+coquimbo_2 <- coquimbo_2 %>% arrange(-suma)
+coquimbo_2 <- coquimbo_2[1:10,]
+
+library(ggplot2)
+
+ggplot(coquimbo_2, aes(x = reorder(concepto, suma), y = suma)) +
+          geom_bar(stat = "identity") + 
+          coord_flip()+
+          ggtitle(label = "Top-10 palabras de la colección Coquimbo")+
+          labs(x="Frecuencia", y="Concepto")
+
 ```
 
 ```{r}
 # 10 conceptos más mencionados en Metropolitana de Santiago
+metropolitana <- data_tf %>% filter(region=='Metropolitana de Santiago')
+columnas_3 <- colSums(metropolitana[,-c(1,2)])
+metropolitana_2 <- data.frame(concepto=names(metropolitana[,-c(1,2)]), suma=columnas_3)
+metropolitana_2 <- metropolitana_2 %>% arrange(-suma)
+metropolitana_2 <- metropolitana_2[1:10,]
+
+library(ggplot2)
+
+ggplot(metropolitana_2, aes(x = reorder(concepto, suma), y = suma)) +
+          geom_bar(stat = "identity") + 
+          coord_flip()+
+          ggtitle(label = "Top-10 palabras de la colección metropolitana")+
+          labs(x="Frecuencia", y="Concepto")
+
 ```
 
 6. De la pregunta anterior, ¿considera que es razonable usar el conteo de frecuencias para determinar las regiones que tuvieron mayor participación en el proceso? ¿Por qué? Sugiera y solamente comente una forma distinta de hacerlo.
