@@ -220,6 +220,9 @@ Luego, genere un gráfico de barras (ggplot) que muestre los 10 conceptos más m
 Cabe resaltar, que se esperan tres gráficos de barras para las tres diferentes regiones:
 
 ```{r}
+atacama <- data_tf %>% filter(region=='Atacama')
+atacama_top <- sort(colSums(atacama[,-1]), decreasing = T)[1:10]
+
 library(ggplot2)
 
 ggplot(data_tf, aes(region, localidad)) +
@@ -238,9 +241,9 @@ ggplot(data_tf, aes(region, localidad)) +
 
 6. De la pregunta anterior, ¿considera que es razonable usar el conteo de frecuencias para determinar las regiones que tuvieron mayor participación en el proceso? ¿Por qué? Sugiera y solamente comente una forma distinta de hacerlo.
 
-```{r}
 # RESPUESTA
-```
+Antes de comparar la participación en el proceso entre las distintas regiones se debe normalizar cada una de estas a partir de la cantidad de habitantes que posea, puesto que de esta forma se estarían comparando bajo una misma métrica el porcentaje de participación de cada región, por lo que no sería razonable considerar directamente las frecuencias de participación de las regiones para este análisis.
+
 
 ## Ejercicios
 
@@ -270,10 +273,11 @@ plot(filtro_tipos$TipoAccidente, filtro_tipos$Cantidad,xlab = "Tipo de accidente
 
 **Respuesta:** *Revisar*
 
-Se puede observar que los accidentes por colisión presentan la mayor variabilidad por región. También se tiene valores outliers que distorsionan el boxplot. Asimismo se puede notar que los accidentes por Caida y Otros presentan muy poca variabilidad y su mediana es menor respecto a los otros tipos de accidentes.
+Se puede observar que los accidentes por colisión presentan la mayor variabilidad por región. También se tienen valores outliers que distorsionan el boxplot. Asimismo se puede notar que los accidentes por Caida y Otros presentan muy poca variabilidad y su mediana es menor respecto a los otros tipos de accidentes.
 
-Se podría realizar un histograma de accidentes por región diferenciados en el tipo de accidente, para tener una mejor idea sobre cuál fue la región con más accidentes y de qué tipo. También se podrían listar las comunas con más y menos accidentes y realizar boxplot y encontrar diferencias. Esto nos ayudaría a comprender en qué región/comuna se produjo la mayor/menor cantidad de accidentes y de qué tipo, y de esta forma direccionar y enfocar políticas que busquen reducir los accidentes.
+Se podrían realizar histogramas de accidentes por región diferenciados por tipo de accidente, para tener una mejor idea sobre qué tipo de accidente predomina en cada región y tomar medidas pertinentes para esta situación.
 
+También se podría analizar la proporción por tipo de accidentes a nivel de comuna y/o región en comparación a la cantidad de estos a nivel nacional, entonces de esta forma se podría visualizar cuáles son las regiones o comunas que más aportan en porcentaje a las cifras de accidentes en el país. Esto se podría implementar mediante la construcción de gráficos de torta (circular) por tipo de accidente, en los cuales cada trozo del gráfico representaría el porcentaje de ese tipo de accidente en cada región del país, siempre teniendo en consideración que la suma de cada tipo de accidente por región sea igual a la cantidad de ese tipo de accidente a nivel nacional.
 
 ### Diamantes
 
@@ -293,23 +297,27 @@ Realice una exploración por el set de datos para responder las siguientes pregu
 
 ```{r}
 # RESPUESTA
-boxplot(diamonds[,c(5,6,8,9,10)], main="Inconsistencias en medidas fisicas")
-colSums(is.na(diamonds[,c(5,6,8,9,10)]))
+boxplot(diamonds[,c(1,5,6,8,9,10)], main="Inconsistencias en medidas fisicas")
+colSums(is.na(diamonds[,c(1,5,6,8,9,10)]))
 
 ```
-  R: Dado los resultados expuestos, dentro de las medidas fisicas no existen valores inexistentes (la suma de los na por columna es 0), pero si valores inconsistentes u outliers (Representados en los puntos alejados del boxplot para cada atributo). Dado la pequeña cantidad de outliers estos pueden ser perfectamente "recortados" manteniendo la representatividad del dataset.
-  
+  R: Dado los resultados expuestos, dentro de las medidas fisicas no existen valores inexistentes (la suma de los na por columna es 0), pero si valores inconsistentes u outliers (Representados en los puntos alejados del boxplot para cada atributo). Para no alterar el comportamiento del set de datos, lo que se podría hacer con los outliers es mantenerlos o modificarlos de tal forma que no afecte las tendencias que tenga el conjunto de datos, esto va a depender de para qué se van a utilizar los datos y qué tan importante es mantener el tamaño del set de datos.
   
 2. Considerando la relación entre dos atributos, ¿qué atributos están más correlacionadas con el precio (price) y qué significa esto? ¿cuál es la correlación más alta para table? Adjunte el código necesario para la respuesta.
 
 ```{r}
 #RESPUESTA
-cor(diamonds[,-c(2,3,4)])
+library(corrplot)
+correlacion <- cor(diamonds[,-c(2,3,4)])
+round(correlacion, digits = 2)
+corrplot(correlacion, method = "shade", shade.col = NA, tl.col = "black", tl.srt = 50, addCoef.col = "black")
 ```
-R: Se puede notar que el precio está bastante correlacionado positivamente con los atributos físicos(carat(peso),x,y,z) de los diamantes, pues posee valores muy cercanos a 1, lo cual tiene bastante sentido, ya que un diamante más grande tendrá mayor valor.
+R: Se puede notar que el precio está bastante correlacionado positivamente con las variables carat (quilates), x (largo), y (ancho) y z (profundidad) de los diamantes, pues posee valores muy cercanos a 1, lo cual tiene bastante sentido, ya que un diamante mayores dimensiones tendrá mayor valor.
 
-La correlación más alta para table corresponde al largo(x) del diamante, con un valor de 0.1953, lo que corresponde a una correlación positiva.
+La variable que está más correlacionada con table es depth, la profundidad del diamante, con un valor absoluto de 0.3, lo que corresponde a una correlación negativa, es decir, que mientras mayor sea la variable table menor será la profundidad del diamante.
 
 3. Proponga otra forma para explorar los datos. ¿Qué información adicional aporta? Adjunte una breve explicación.
 
 **Respuesta:**
+
+Si se quisiera ver cuáles son las dimensiones de los diamantes que más se repiten se podría realizar un gráfico (scatter plot) de tres dimensiones con el conjunto de variables c(x,y,z), en donde en aquellos puntos del gráfico que presenten una mayor concentración de datos representarían cuáles son las dimensiones más comunes para este set de datos. 
