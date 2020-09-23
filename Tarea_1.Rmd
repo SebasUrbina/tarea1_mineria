@@ -271,7 +271,7 @@ plot(filtro_tipos$TipoAccidente, filtro_tipos$Cantidad,xlab = "Tipo de accidente
 
 2. ¿Qué aprecia con el gráfico anterior? ¿Qué otra forma de explorar los datos podría agregar? ¿Qué información adicional aporta? Adjunte una breve explicación.
 
-**Respuesta:** *Revisar*
+**Respuesta:**
 
 Se puede observar que los accidentes por colisión presentan la mayor variabilidad por región. También se tienen valores outliers que distorsionan el boxplot. Asimismo se puede notar que los accidentes por Caida y Otros presentan muy poca variabilidad y su mediana es menor respecto a los otros tipos de accidentes.
 
@@ -293,8 +293,6 @@ Realice una exploración por el set de datos para responder las siguientes pregu
 
 1. Teniendo en cuenta las medidas físicas, ¿considera que existen valores inexistentes o inconsistentes? Describa como manejaría esta situación. Adjunte el código necesario.
 
-*Revisar*
-
 ```{r}
 # RESPUESTA
 boxplot(diamonds[,c(1,5,6,8,9,10)], main="Inconsistencias en medidas fisicas")
@@ -310,7 +308,7 @@ colSums(is.na(diamonds[,c(1,5,6,8,9,10)]))
 library(corrplot)
 correlacion <- cor(diamonds[,-c(2,3,4)])
 round(correlacion, digits = 2)
-corrplot(correlacion, method = "shade", shade.col = NA, tl.col = "black", tl.srt = 50, addCoef.col = "black")
+corrplot(correlacion, method = "shade", shade.col = NA, tl.col = "black", tl.srt = 70, addCoef.col = "black")
 ```
 R: Se puede notar que el precio está bastante correlacionado positivamente con las variables carat (quilates), x (largo), y (ancho) y z (profundidad) de los diamantes, pues posee valores muy cercanos a 1, lo cual tiene bastante sentido, ya que un diamante mayores dimensiones tendrá mayor valor.
 
