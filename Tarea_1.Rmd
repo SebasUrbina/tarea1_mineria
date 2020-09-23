@@ -226,13 +226,19 @@ Luego, genere un gráfico de barras (ggplot) que muestre los 10 conceptos más m
 Cabe resaltar, que se esperan tres gráficos de barras para las tres diferentes regiones:
 
 ```{r}
-# atacama <- data_tf %>% filter(region=='Atacama')
-# atacama_top <- sort(colSums(atacama[,-1]), decreasing = T)[1:10]
+atacama <- data_tf %>% filter(region=='Atacama')
+atacama$suma <- sum(atacama[,-c(1,2)])
+columnas <- colSums(atacama[,-c(1,2)])
+atacama_2 <- data.frame(concepto=names(atacama[,3:114]), suma=columnas)
+atacama_2 <- atacama_2 %>% arrange(-suma)
+atacama_2 <- atacama_2[1:10,]
 
 library(ggplot2)
+ggplot(atacama_2, aes(x = reorder(concepto, suma), y = suma, fill=concepto)) +
+          geom_bar(stat = "identity") + 
+          coord_flip()+
+          ggtitle(label = "Top-20 palabras de la colección")
 
-ggplot(data_tf, aes(region, localidad)) +
-  geom_bar(data = subset(data_tf, region=="Atacama"), stat="identity") 
 
   # 10 conceptos más mencionados en Atacama
 ```
