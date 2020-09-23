@@ -320,4 +320,8 @@ La variable que está más correlacionada con table es depth, la profundidad del
 
 **Respuesta:**
 
-Si se quisiera ver cuáles son las dimensiones de los diamantes que más se repiten se podría realizar un gráfico (scatter plot) de tres dimensiones con el conjunto de variables c(x,y,z), en donde en aquellos puntos del gráfico que presenten una mayor concentración de datos representarían cuáles son las dimensiones más comunes para este set de datos. 
+Se podrían utilizar medidas de tendencia central para cada atributo de dimensión de los diamantes, tales como el promedio, la mediana y la desviación estándar, esto permitiría entender a priori estas características de los datos.
+
+Si se quisiera ver cuáles son las dimensiones de los diamantes que más se repiten se podría realizar un gráfico (scatter plot) de tres dimensiones con el conjunto de variables c(x,y,z), en donde en aquellos puntos del gráfico que presenten una mayor concentración de datos representarían cuáles son las dimensiones más comunes para este set de datos. Por ejemplo, se podrían observar tendencias sobre las medidas de los diamantes, es decir, podría ocurrir que el largo y el ancho del diamante son directamente proporcionales o lo contrario. 
+
+También se podría realizar un histograma para las variables cualitativas de los diamantes, tales como el color, la claridad y el corte, de esta forma se podría ver cuáles son los parámetros más frecuentes para los diamantes.
