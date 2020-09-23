@@ -229,12 +229,13 @@ Cabe resaltar, que se esperan tres gráficos de barras para las tres diferentes 
 atacama <- data_tf %>% filter(region=='Atacama')
 atacama$suma <- sum(atacama[,-c(1,2)])
 columnas <- colSums(atacama[,-c(1,2)])
-atacama_2 <- data.frame(concepto=names(atacama[,3:114]), suma=columnas)
+atacama_2 <- data.frame(concepto=names(atacama[,-c(1,2)]), suma=columnas)
 atacama_2 <- atacama_2 %>% arrange(-suma)
 atacama_2 <- atacama_2[1:10,]
 
 library(ggplot2)
-ggplot(atacama_2, aes(x = reorder(concepto, suma), y = suma, fill=concepto)) +
+
+ggplot(atacama_2, aes(x = reorder(concepto, suma), y = suma)) +
           geom_bar(stat = "identity") + 
           coord_flip()+
           ggtitle(label = "Top-20 palabras de la colección")
