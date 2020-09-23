@@ -247,7 +247,7 @@ ggplot(atacama_2, aes(x = reorder(concepto, suma), y = suma)) +
           geom_bar(stat = "identity") + 
           coord_flip()+
           ggtitle(label = "Top-10 conceptos región de Atacama")+
-          labs(x="Frecuencia", y="Concepto")+theme(plot.title = element_text(hjust = 3))
+          labs(y="Frecuencia", x="Concepto")+theme(plot.title = element_text(hjust = 3))
 
 
   # 10 conceptos más mencionados en Atacama
@@ -267,7 +267,7 @@ ggplot(coquimbo_2, aes(x = reorder(concepto, suma), y = suma)) +
           geom_bar(stat = "identity") + 
           coord_flip()+
           ggtitle(label = "Top-10 conceptos región de Coquimbo")+
-          labs(x="Frecuencia", y="Concepto")+theme(plot.title = element_text(hjust = 3))
+          labs(y="Frecuencia", x="Concepto")+theme(plot.title = element_text(hjust = 3))
 
 ```
 
@@ -285,7 +285,7 @@ ggplot(metropolitana_2, aes(x = reorder(concepto, suma), y = suma)) +
           geom_bar(stat = "identity") + 
           coord_flip()+
           ggtitle(label = "Top-10 conceptos región Metropolitana")+
-          labs(x="Frecuencia", y="Concepto")+theme(plot.title = element_text(hjust = 3))
+          labs(y="Frecuencia", x="Concepto")+theme(plot.title = element_text(hjust = 3))
 
 ```
 
