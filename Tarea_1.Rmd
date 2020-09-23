@@ -144,7 +144,10 @@ data_tf <- read.csv("http://dcc.uchile.cl/~hsarmien/mineria/datasets/actas.txt",
 ```{r}
 dim(data_tf)
 ```
-  R: El dataset posee 328 filas y 113 columnas. Hicimos uso de la función dim().
+
+**Respuesta:**
+
+El dataset posee 328 filas y 113 columnas. Hicimos uso de la función dim().
   
 2. ¿Qué describe cada línea del dataset? (ejemplifique tomando la fila 85)
 
@@ -152,14 +155,20 @@ dim(data_tf)
 #Tomamos la fila 85 del dataset
 data_tf[85,]
 ```
-  R: Cada linea del dataset corresponde a una instancia, que en este caso corresponden a encuentros locales en ciertas localidades del país. Cada una de esta instancia posee como atributos la localidad donde se realizó el cabildo o encuentro y diferentes conceptos constitucionales, los cuales están contabilizados sobre cuantas veces se mencionaron en cada encuentro.
+
+**Respuesta:**
+
+Cada linea del dataset corresponde a una instancia, que en este caso corresponden a encuentros locales en ciertas localidades del país. Cada una de esta instancia posee como atributos la localidad donde se realizó el cabildo o encuentro y diferentes conceptos constitucionales, los cuales están contabilizados sobre cuantas veces se mencionaron en cada encuentro.
 
 3. ¿Existen localidades repetidas en el dataset? Adjunte el código o indique cómo llegó a esa conclusión. 
 
 ```{r}
 dim(unique(data_tf))
 ```
-  R: Utilizamos la función unique() para encontrar los valóres únicos, y con dim(), podemos obtener la cantidad de valores únicos. Se puede notar que el dataset posee 328 filas únicas, que corresponden a la cantidad de filas que posee el dataset. Por lo tanto no existen localidades repetidas.
+
+**Respuesta:**
+
+Utilizamos la función unique() para encontrar los valóres únicos, y con dim(), podemos obtener la cantidad de valores únicos. Se puede notar que el dataset posee 328 filas únicas, que corresponden a la cantidad de filas que posee el dataset. Por lo tanto no existen localidades repetidas.
   
 4. Liste los nombres de las columnas del dataset `data_tf`. Adjunte código en R y *recuerde* usar `head` si el resultado es muy largo.
 
@@ -202,7 +211,7 @@ names(sort(colSums(data_tf[,-1])))[1:10]
 # Definimos la medida de participacion como la cantidad total registrada de todos los conceptos mencionados en cada localidad
 c<-rowSums(data_tf[,-1])
 names(c)<-data_tf$localidad
-sort(c,decreasing = TRUE)[1:10]
+names(sort(c,decreasing = TRUE))[1:10]
 
 # Enlistamos la suma de todos los conceptos hablados por localidad, los relacionamos con su localidad respectiva, ordenamos decrecientemente y seleccionamos las mejores 10
 ```
@@ -237,8 +246,8 @@ library(ggplot2)
 ggplot(atacama_2, aes(x = reorder(concepto, suma), y = suma)) +
           geom_bar(stat = "identity") + 
           coord_flip()+
-          ggtitle(label = "Top-10 palabras de la colección Atacama")+
-          labs(x="Frecuencia", y="Concepto")
+          ggtitle(label = "Top-10 conceptos región de Atacama")+
+          labs(x="Frecuencia", y="Concepto")+theme(plot.title = element_text(hjust = 3))
 
 
   # 10 conceptos más mencionados en Atacama
@@ -257,8 +266,8 @@ library(ggplot2)
 ggplot(coquimbo_2, aes(x = reorder(concepto, suma), y = suma)) +
           geom_bar(stat = "identity") + 
           coord_flip()+
-          ggtitle(label = "Top-10 palabras de la colección Coquimbo")+
-          labs(x="Frecuencia", y="Concepto")
+          ggtitle(label = "Top-10 conceptos región de Coquimbo")+
+          labs(x="Frecuencia", y="Concepto")+theme(plot.title = element_text(hjust = 3))
 
 ```
 
@@ -275,14 +284,15 @@ library(ggplot2)
 ggplot(metropolitana_2, aes(x = reorder(concepto, suma), y = suma)) +
           geom_bar(stat = "identity") + 
           coord_flip()+
-          ggtitle(label = "Top-10 palabras de la colección metropolitana")+
-          labs(x="Frecuencia", y="Concepto")
+          ggtitle(label = "Top-10 conceptos región Metropolitana")+
+          labs(x="Frecuencia", y="Concepto")+theme(plot.title = element_text(hjust = 3))
 
 ```
 
 6. De la pregunta anterior, ¿considera que es razonable usar el conteo de frecuencias para determinar las regiones que tuvieron mayor participación en el proceso? ¿Por qué? Sugiera y solamente comente una forma distinta de hacerlo.
 
-# RESPUESTA
+**Respuesta:**
+
 Antes de comparar la participación en el proceso entre las distintas regiones se debe normalizar cada una de estas a partir de la cantidad de habitantes que posea, puesto que de esta forma se estarían comparando bajo una misma métrica el porcentaje de participación de cada región, por lo que no sería razonable considerar directamente las frecuencias de participación de las regiones para este análisis.
 
 
@@ -300,6 +310,8 @@ head(tipos)
 Explore el set de datos para responder las siguientes preguntas:
 
 1. Filtre los datos para incluir sólo los accidentes ocurridos el año 2011 a nivel regional. Genere un boxplot donde se indique la cantidad de accidentes categorizado por tipo de accidente.
+
+**Respuesta:**
 
 Este tipo de gráfico nos ayudará a entender como se distribuye los datos por cada tipo de accidentes. Es decir, podremos apreciar que tan dispersos o similares son los datos en todo el dataset. También, puede ser útil para observar valores atípicos u outliers en los datos.
 
@@ -340,7 +352,10 @@ boxplot(diamonds[,c(1,5,6,8,9,10)], main="Inconsistencias en medidas fisicas")
 colSums(is.na(diamonds[,c(1,5,6,8,9,10)]))
 
 ```
-  R: Dado los resultados expuestos, dentro de las medidas fisicas no existen valores inexistentes (la suma de los na por columna es 0), pero si valores inconsistentes u outliers (Representados en los puntos alejados del boxplot para cada atributo). Para no alterar el comportamiento del set de datos, lo que se podría hacer con los outliers es mantenerlos o modificarlos de tal forma que no afecte las tendencias que tenga el conjunto de datos, esto va a depender de para qué se van a utilizar los datos y qué tan importante es mantener el tamaño del set de datos.
+
+**Respuesta:**
+
+Dado los resultados expuestos, dentro de las medidas fisicas no existen valores inexistentes (la suma de los na por columna es 0), pero si valores inconsistentes u outliers (Representados en los puntos alejados del boxplot para cada atributo). Para no alterar el comportamiento del set de datos, lo que se podría hacer con los outliers es mantenerlos o modificarlos de tal forma que no afecte las tendencias que tenga el conjunto de datos, esto va a depender de para qué se van a utilizar los datos y qué tan importante es mantener el tamaño del set de datos.
   
 2. Considerando la relación entre dos atributos, ¿qué atributos están más correlacionadas con el precio (price) y qué significa esto? ¿cuál es la correlación más alta para table? Adjunte el código necesario para la respuesta.
 
@@ -351,7 +366,10 @@ correlacion <- cor(diamonds[,-c(2,3,4)])
 round(correlacion, digits = 2)
 corrplot(correlacion, method = "shade", shade.col = NA, tl.col = "black", tl.srt = 70, addCoef.col = "black")
 ```
-R: Se puede notar que el precio está bastante correlacionado positivamente con las variables carat (quilates), x (largo), y (ancho) y z (profundidad) de los diamantes, pues posee valores muy cercanos a 1, lo cual tiene bastante sentido, ya que un diamante mayores dimensiones tendrá mayor valor.
+
+**Respuesta:**
+
+Se puede notar que el precio está bastante correlacionado positivamente con las variables carat (quilates), x (largo), y (ancho) y z (profundidad) de los diamantes, pues posee valores muy cercanos a 1, lo cual tiene bastante sentido, ya que un diamante mayores dimensiones tendrá mayor valor.
 
 La variable que está más correlacionada con table es depth, la profundidad del diamante, con un valor absoluto de 0.3, lo que corresponde a una correlación negativa, es decir, que mientras mayor sea la variable table menor será la profundidad del diamante.
 
