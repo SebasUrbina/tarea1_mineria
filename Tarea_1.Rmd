@@ -184,7 +184,7 @@ data_tf[order(data_tf$justicia, decreasing = TRUE),][1:10,]$localidad
 
 ```{r}
 #Sumamos todas las columnas excepto la primera que no es numérica, y luego ordenamos
-sort(colSums(data_tf[,-1]))[1:10]
+names(sort(colSums(data_tf[,-1])))[1:10]
 
 ```
 
