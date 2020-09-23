@@ -75,12 +75,18 @@ Ambos definen datos cuantitativos (medidas estimables), se diferencian principal
 
 *5. ¿Qué factores que ocasionan errores en el análisis de datos deben ser considerados para la limpieza de un set de datos?*
 
-**Respuesta:** POR COMPLETAR.
-- Ruido:
-- Outliers:
-- Valores faltantes:
-- Valores inconsistentes:
-- Datos duplicados:
+**Respuesta:**
+A continuación, se describen distintos factores que se deben considerar en el momento de realizar una limpieza de un set de datos:
+
+- Ruido: Es una componente aleatoria que se le agrega a los datos, se pueden añadir de forma intencional o no. Por ejemplo, puede haber un factor externo que podría modificar los datos medidos, ya sean espaciales o temporales, lo cual produce ruido en los valores tomados.
+
+- Outliers: Corresponden a valores que son considerablemente diferente a la mayoría de los datos de un conjunto, es decir, que tienen una característica diferente a la tendencia que presentan los datos.
+
+- Valores faltantes: Estos valores pueden ocurrir porque los datos no pudieron ser recolectados, por ejemplo, porque son datos confidenciales o los sujetos de la muestra no los quisieron proporcionar. Además, puede ocurrir que no todos los atributos de un conjunto de datos son aplicables a todos los sujetos de una muestra, lo cual generaría datos faltantes.
+
+- Valores inconsistentes: Pueden ser valores mal ingresados por error humano, generando incosistencia en los datos, los cuales pueden generar ruido, ser un outlier o ser simplemente un valor mal ingresado por error.
+
+- Datos duplicados: Puede ocurrir que en un mismo set de datos existan filas que contengan los mismos datos, los cuáles no aportan mayor información y pueden ser removidos dado que pueden generar problemas cuando se esté analizando o describiendo el set de datos. 
 
 
 *6. ¿Qué es el análisis exploratorio de datos o EDA?*
@@ -220,8 +226,8 @@ Luego, genere un gráfico de barras (ggplot) que muestre los 10 conceptos más m
 Cabe resaltar, que se esperan tres gráficos de barras para las tres diferentes regiones:
 
 ```{r}
-atacama <- data_tf %>% filter(region=='Atacama')
-atacama_top <- sort(colSums(atacama[,-1]), decreasing = T)[1:10]
+# atacama <- data_tf %>% filter(region=='Atacama')
+# atacama_top <- sort(colSums(atacama[,-1]), decreasing = T)[1:10]
 
 library(ggplot2)
 
